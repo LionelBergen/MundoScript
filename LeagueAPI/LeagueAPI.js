@@ -4,8 +4,10 @@ const https = require('https');
 // Riot specifies this as a sample regexp to validate names
 // any visible Unicode letter characters, digits (0-9), spaces, underscores, and periods.
 const NAME_REGEXP = new RegExp('^[0-9\\p{L} _\\.]+$');
+
 const GET_SUMMONER_BY_NAME_URL = 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/%name%?api_key=%apikey%';
 const GET_CHAMPION_MASTERY_URL = 'https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/%name%?api_key=%apikey%';
+const GET_CHAMPION_ROTATION_URL = 'https://na1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=%apikey%';
 
 class LeagueAPI
 {
@@ -41,14 +43,20 @@ class LeagueAPI
 		}
 		
 		makeAnHTTPSCall(getURLChampionMastery(this.apiKey, summonerName), function(data) {
-		let championMasterObjects = [];
-		for (var i=0; i < data.length; i++)
-		{
-			championMasterObjects.push(ChampionMastery.from(data[i]));
-		}
-		callback(championMasterObjects);
+			let championMasterObjects = [];
+			for (var i=0; i < data.length; i++)
+			{
+				championMasterObjects.push(ChampionMastery.from(data[i]));
+			}
+			callback(championMasterObjects);
 		});
-		
+	}
+	
+	getFreeChampionRotation(callback)
+	{
+		makeAnHTTPSCall(getURLChampRotation(this.apiKey), function(data) { 
+			callback(ChampionRotation.from(data));
+		});
 	}
 }
 
@@ -60,6 +68,11 @@ function getURLChampionMastery(apiKey, summonerName)
 function getURLSummonerByName(apiKey, summonerName)
 {
 	return GET_SUMMONER_BY_NAME_URL.replace('%name%', summonerName).replace('%apikey%', apiKey);
+}
+
+function getURLChampRotation(apiKey)
+{
+	return GET_CHAMPION_ROTATION_URL.replace('%apikey%', apiKey);
 }
 
 function hasError(jsonData)
