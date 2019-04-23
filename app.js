@@ -3,14 +3,10 @@ const APIKeys = require('./apiKeys.js');
 let LeagueAPI = require('./LeagueAPI/LeagueAPI.js');
 LeagueAPI = new LeagueAPI(APIKeys.LeagueApiKey, Region.NA);
 
-console.log('--- testing getSummonerByName ---');
+
 LeagueAPI.getSummonerByName('LeagueOfSausage', function(accountInfo) {
-	console.log(accountInfo);
-	
-	console.log('--- testing getChampionMasteryTotal ---');
-	LeagueAPI.getChampionMasteryTotal(accountInfo, function(thirdPartyCodeInfo) { 
-		console.log(thirdPartyCodeInfo);
-	});
+	LeagueAPI.getChampionMastery(accountInfo, console.log);
+	LeagueAPI.getChampionMasteryByChampion(accountInfo, Champion.DRMUNDO, console.log);
 });
 
 
@@ -18,3 +14,4 @@ LeagueAPI.getSummonerByName('LeagueOfSausage', function(accountInfo) {
 // TODO: add mapping classes
 //LeagueAPI.getMatch(3027357391, console.log);
 //LeagueAPI.getFeaturedGames(console.log);
+//LeagueAPI.getMatchTimeline(3027357391, console.log);

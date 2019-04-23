@@ -76,7 +76,7 @@ class LeagueAPI
 	
 	getMatchByTournament(matchId, tournamentCode, callback)
 	{
-		makeAnHTTPSCall(getURLMatchByTournamentCode(tournamentCode, matchId, this.apiKey, this.region), callback);
+		makeAnHTTPSCall(getURLMatchByTournamentCodeAndMatchId(tournamentCode, matchId, this.apiKey, this.region), callback);
 	}
 	
 	getMatchIdsByTournament(tournamentCode, callback)
@@ -132,14 +132,13 @@ class LeagueAPI
 		});
 	}
 	
-	getChampionMastery(accountObj, championObj, callback)
+	getChampionMasteryByChampion(accountObj, championObj, callback)
 	{
 		let summonerId = getSummonerIdFromParam(accountObj);
 		let championId = getChampionIdFromParam(championObj);
 		
-		makeAnHTTPSCall(getURLChampionMastery(summonerId, championId, this.apiKey, this.region), function(data) {
-			let championMasterObjects = getArrayOfChampionObjectsFromJSONList(data);
-			callback(championMasterObjects);
+		makeAnHTTPSCall(getURLChampionMasteryByChampion(summonerId, championId, this.apiKey, this.region), function(data) {
+			callback(ChampionMastery.from(data));
 		});
 	}
 	
@@ -158,29 +157,28 @@ function getArrayOfChampionObjectsFromJSONList(data)
 	{
 		championMasterObjects.push(ChampionMastery.from(data[i]));
 	}
-	callback(championMasterObjects);
 	
 	return championMasterObjects;
 }
 
 function getChampionIdFromParam(param)
 {
-	summonerId = '';
+	championId = '';
 	
-	if (param instanceof Champion)
+	if (param instanceof String && isNumeric(param))
 	{
-		summonerId = param.id;
+		championId = param;
 	}
-	else if (param instanceof String && isNumeric(param))
+	else if (param.value && isNumeric(param.value))
 	{
-		summonerId = param;
+		championId = param.value;
 	}
 	else
 	{
 		throw 'invalid argument, requires championId or Champion object';
 	}
 	
-	return summonerId;
+	return championId;
 }
 
 function getSummonerIdFromParam(param)
@@ -243,7 +241,7 @@ function getURLMatchByTournamentcode(tournamentCode, apiKey, region)
 	return getURLWithRegionAndAPI(GET_MATCH_BY_TOURNAMENT_CODE_URL, apiKey, region).replace('%tournamentcode%', tournamentCode);
 }
 
-function getURLMatchByTournamentCode(tournamentCode, matchId, apiKey, region)
+function getURLMatchByTournamentCodeAndMatchId(tournamentCode, matchId, apiKey, region)
 {
 	return getURLWithRegionAndAPI(GET_MATCH_BY_MATCH_ID_AND_TOURNAMNET_CODE_URL, apiKey, region).replace('%tournamentcode%', tournamentCode).replace('%matchid', matchId);
 }
@@ -278,9 +276,9 @@ function getURLChampionMastery(summonerName, apiKey, region)
 	return getURLWithRegionAndAPI(GET_CHAMPION_MASTERY_URL, apiKey, region).replace('%name%', summonerName);
 }
 
-function getURLChampionMastery(summonerName, championId, apiKey, region)
+function getURLChampionMasteryByChampion(summonerName, championId, apiKey, region)
 {
-	return getURLWithRegionAndAPI(GET_CHAMPION_MASTERY_WITH_CHAMPION_URL).replace('%name%', summonerName).replace('%championid%', championId);
+	return getURLWithRegionAndAPI(GET_CHAMPION_MASTERY_WITH_CHAMPION_URL, apiKey, region).replace('%name%', summonerName).replace('%championid%', championId);
 }
 
 function getURLSummonerByName(summonerName, apiKey, region)
