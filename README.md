@@ -2,7 +2,8 @@
 Wrapper for all API methods
 
 Usage:
-```let LeagueAPI = require('./LeagueAPI/LeagueAPI.js');
+```
+let LeagueAPI = require('./LeagueAPI/LeagueAPI.js');
 LeagueAPI = new LeagueAPI(LeagueApiKey, Region.NA);
 
 LeagueAPI.getSummonerByName('LeagueOfSausage', function(e) {
