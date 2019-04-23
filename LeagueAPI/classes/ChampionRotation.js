@@ -17,12 +17,12 @@ class ChampionRotation
 		
 		for (var i = 0; i < json.freeChampionIds.length; i++)
 		{
-			freeChampions.push(Champion[json.freeChampionIds[i]]);
+			freeChampions.push(Champion.findById(json.freeChampionIds[i]));
 		}
 		
 		for (var i = 0; i < json.freeChampionIdsForNewPlayers.length; i++)
 		{
-			freeChampionsForNewPlayers.push(Champion[json.freeChampionIdsForNewPlayers[i]]);
+			freeChampionsForNewPlayers.push(Champion.findById(json.freeChampionIdsForNewPlayers[i]));
 		}
 		
 		return new ChampionRotation(freeChampions, freeChampionsForNewPlayers, maxNewPlayerLevel);

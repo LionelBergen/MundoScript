@@ -3,11 +3,12 @@ const APIKeys = require('./apiKeys.js');
 let LeagueAPI = require('./LeagueAPI/LeagueAPI.js');
 LeagueAPI = new LeagueAPI(APIKeys.LeagueApiKey, Region.NA);
 
-
-LeagueAPI.getSummonerByName('LeagueOfSausage', function(accountInfo) {
+/*LeagueAPI.getSummonerByName('LeagueOfSausage', function(accountInfo) {
 	LeagueAPI.getChampionMastery(accountInfo, console.log);
 	LeagueAPI.getChampionMasteryByChampion(accountInfo, Champion.DRMUNDO, console.log);
-});
+});*/
+
+LeagueAPI.getPositionalRankQueues(console.log);
 
 
 

@@ -8,7 +8,7 @@ class ChampionMastery
 		this.championLevel = championLevel;
 		this.championPoints = championPoints;
 		this.lastPlayTime = new Date(lastPlayTime);
-		this.champion = Object.values(Champion).find(champ => {return champ.value === championId});
+		this.champion = Champion.findById(championId);
 	}
 	
 	static from(json)

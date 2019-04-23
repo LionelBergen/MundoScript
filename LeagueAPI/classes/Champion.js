@@ -143,7 +143,12 @@ const Champion =
 	ZIGGS: {value: 115, label: 'Ziggs' },
 	ZILEAN: {value: 26, label: 'Zilean' },
 	ZOE: {value: 142, label: 'Zoe' },
-	ZYRA: {value: 143, label: 'Zyra' }
+	ZYRA: {value: 143, label: 'Zyra' },
+	
+	findById(id)
+	{
+		return Object.values(this).find(champ => {return champ.value === id})
+	}
 }
 
 module.exports = Champion;
