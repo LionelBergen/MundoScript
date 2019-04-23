@@ -12,3 +12,9 @@ LeagueAPI.getSummonerByName('LeagueOfSausage', function(accountInfo) {
 		console.log(thirdPartyCodeInfo);
 	});
 });
+
+
+
+// TODO: add mapping classes
+//LeagueAPI.getMatch(3027357391, console.log);
+//LeagueAPI.getFeaturedGames(console.log);

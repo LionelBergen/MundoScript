@@ -74,7 +74,7 @@ class LeagueAPI
 		makeAnHTTPSCall(getMatchURL(matchId, this.apiKey, this.region), callback);
 	}
 	
-	getMatch(matchId, tournamentCode, callback)
+	getMatchByTournament(matchId, tournamentCode, callback)
 	{
 		makeAnHTTPSCall(getURLMatchByTournamentCode(tournamentCode, matchId, this.apiKey, this.region), callback);
 	}
