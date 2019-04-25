@@ -1,4 +1,4 @@
-# LeagueReddit
+# LeagueAPIWrapper (Node.JS)
 Wrapper for all API methods
 
 Usage:
