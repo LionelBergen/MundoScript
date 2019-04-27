@@ -52,100 +52,119 @@ class LeagueAPI
 		this.region = region;
 	}
 	
-	getThirdPartyCode(accountObj, callback)
+	getThirdPartyCode(accountObj)
 	{
 		let summonerId = getSummonerIdFromParam(accountObj);
 		
-		makeAnHTTPSCall(getThirdPartyCode(summonerId, this.apiKey, this.region), callback);
+		return makeAnHTTPSCall(getThirdPartyCode(summonerId, this.apiKey, this.region));
 	}
 	
-	getStatus(callback)
+	getStatus()
 	{
-		makeAnHTTPSCall(getURLStatus(this.apiKey, this.region), callback);
+		return makeAnHTTPSCall(getURLStatus(this.apiKey, this.region));
 	}
 	
-	getFeaturedGames(callback)
+	getFeaturedGames()
 	{
-		makeAnHTTPSCall(getURLFeaturedGames(this.apiKey, this.region), callback);
+		return makeAnHTTPSCall(getURLFeaturedGames(this.apiKey, this.region));
 	}
 	
-	getMatch(matchId, callback)
+	getMatch(matchId)
 	{
-		makeAnHTTPSCall(getMatchURL(matchId, this.apiKey, this.region), callback);
+		makeAnHTTPSCall(getMatchURL(matchId, this.apiKey, this.region));
 	}
 	
-	getMatchByTournament(matchId, tournamentCode, callback)
+	getMatchByTournament(matchId, tournamentCode)
 	{
-		makeAnHTTPSCall(getURLMatchByTournamentCodeAndMatchId(tournamentCode, matchId, this.apiKey, this.region), callback);
+		return makeAnHTTPSCall(getURLMatchByTournamentCodeAndMatchId(tournamentCode, matchId, this.apiKey, this.region));
 	}
 	
-	getMatchIdsByTournament(tournamentCode, callback)
+	getMatchIdsByTournament(tournamentCode)
 	{
-		makeAnHTTPSCall(getURLMatchByTournamentCode(tournamentCode, this.apiKey, this.region), callback);
+		return makeAnHTTPSCall(getURLMatchByTournamentCode(tournamentCode, this.apiKey, this.region));
 	}
 	
-	getPositionalRankQueues(callback)
+	getPositionalRankQueues()
 	{
-		makeAnHTTPSCall(getURLQueuesWithRanks(this.apiKey, this.region), callback);
+		return makeAnHTTPSCall(getURLQueuesWithRanks(this.apiKey, this.region));
 	}
 
-	getSummonerByName(summonerName, callback)
+	getSummonerByName(summonerName)
 	{
-		makeAnHTTPSCall(getURLSummonerByName(summonerName, this.apiKey, this.region), function(data) {
-			callback(LeagueAccountInfo.from(data));
+		return new Promise(function(resolve, reject) {
+			makeAnHTTPSCall(getURLSummonerByName(summonerName, this.apiKey, this.region))
+			.then(function(data) {
+				resolve(LeagueAccountInfo.from(data));
+			})
+			.catch(function(error) {
+				reject(error);
+			});
 		});
 	}
 	
-	getActiveGames(accountObj, callback)
+	getActiveGames(accountObj)
 	{
 		let summonerId = getSummonerIdFromParam(accountObj);
 		
-		makeAnHTTPSCall(getURLActiveGames(summonerId, this.apiKey, this.region), callback);
+		return makeAnHTTPSCall(getURLActiveGames(summonerId, this.apiKey, this.region));
 	}
 	
-	getMatchList(accountObj, callback)
+	getMatchList(accountObj)
 	{
 		let accountId = getAccountIdFromParam(accountObj);
 		
-		makeAnHTTPSCall(getURLMatchList(accountId, this.apiKey, this.region), callback);
+		return makeAnHTTPSCall(getURLMatchList(accountId, this.apiKey, this.region));
 	}
 	
-	getMatchTimeline(matchId, callback)
+	getMatchTimeline(matchId)
 	{
-		makeAnHTTPSCall(getURLMatchTimeline(matchId, this.apiKey, this.region), callback);
+		makeAnHTTPSCall(getURLMatchTimeline(matchId, this.apiKey, this.region));
 	}
 	
-	getChampionMasteryTotal(accountObj, callback)
+	getChampionMasteryTotal(accountObj)
 	{
 		let summonerId = getSummonerIdFromParam(accountObj);
 		
-		makeAnHTTPSCall(getURLMasteryTotal(summonerId, this.apiKey, this.region), callback);
+		return makeAnHTTPSCall(getURLMasteryTotal(summonerId, this.apiKey, this.region));
 	}
 
-	getChampionMastery(accountObj, callback)
+	getChampionMastery(accountObj)
 	{
 		let summonerId = getSummonerIdFromParam(accountObj);
 		
-		makeAnHTTPSCall(getURLChampionMastery(summonerId, this.apiKey, this.region), function(data) {
-			let championMasterObjects = getArrayOfChampionObjectsFromJSONList(data);
-			callback(championMasterObjects);
+		return new Promise(function(resolve, reject) {
+			makeAnHTTPSCall(getURLChampionMastery(summonerId, this.apiKey, this.region))
+			.then(function(data) {
+				let championMasterObjects = getArrayOfChampionObjectsFromJSONList(data);
+				resolve(championMasterObjects);
+			})
+			.catch(function(error) {
+				reject(error);
+			});
 		});
 	}
 	
-	getChampionMasteryByChampion(accountObj, championObj, callback)
+	getChampionMasteryByChampion(accountObj, championObj)
 	{
 		let summonerId = getSummonerIdFromParam(accountObj);
 		let championId = getChampionIdFromParam(championObj);
 		
-		makeAnHTTPSCall(getURLChampionMasteryByChampion(summonerId, championId, this.apiKey, this.region), function(data) {
-			callback(ChampionMastery.from(data));
+		return new Promise(function(resolve, reject) {
+			makeAnHTTPSCall(getURLChampionMasteryByChampion(summonerId, championId, this.apiKey, this.region))
+			.then(function(data) {
+				resolve(ChampionMastery.from(data));
+			})
+			.catch(reject);
 		});
 	}
 	
-	getFreeChampionRotation(callback)
+	getFreeChampionRotation()
 	{
-		makeAnHTTPSCall(getURLChampRotation(this.apiKey, this.region), function(data) { 
-			callback(ChampionRotation.from(data));
+		return new Promise(function(resolve, reject) { 
+			makeAnHTTPSCall(getURLChampRotation(this.apiKey, this.region)).then(function(data) {
+				resolve(ChampionRotation.from(data));
+			})
+			.catch(reject);
 		});
 	}
 }
@@ -302,45 +321,47 @@ function getURLWithRegionAndAPI(url, apiKey, region)
 	return url.replace('%apikey%', apiKey).replace('%region%', region);
 }
 
-function hasError(jsonData)
-{
-	return jsonData.status ? true : false;
-}
-
 function isNumeric(n) 
 {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-function makeAnHTTPSCall(URL, callback)
+function makeAnHTTPSCall(URL)
 {
-	https.get(URL, (resp) => {
-	  let data = '';
+	return new Promise(function(resolve, reject) {
+		https.get(URL, (resp) => {
+		  let data = '';
 
-	  // A chunk of data has been recieved.
-	  resp.on('data', (chunk) => {
-		data += chunk;
-	  });
+		  // A chunk of data has been recieved.
+		  resp.on('data', (chunk) => {
+			data += chunk;
+		  });
 
-	  // The whole response has been received.
-	  resp.on('end', () => {
-		  	let parsedData = JSON.parse(data);
+		  // The whole response has been received.
+		  resp.on('end', () => {
+				let parsedData = JSON.parse(data);
 
-			if (hasError(parsedData))
-			{
-				// TODO: Maybe only print hint if status code is 403.
-				console.log('failed, hint: ensure API key is still active. Error response from API: ');
-				console.log(parsedData);
-			}
-			else
-			{
-				callback(parsedData);
-			}
-	  });
+				if (parsedData.status)
+				{
+					if (parsedData.status.status_code == '403')
+					{
+						reject('Forbidden. Ensure api key is up to date.');
+					}
+					else
+					{
+						reject('Failed: ' + parsedData);
+					}
+				}
+				else
+				{
+					resolve(parsedData);
+				}
+		  });
 
-	// TODO: Errors are important, save to a database or Log file
-	}).on("error", (err) => {
-	  console.log("Error: " + err.message);
+		// TODO: Errors are important, save to a database or Log file
+		}).on("error", (err) => {
+		  console.log("Error: " + err.message);
+		});
 	});
 }
 

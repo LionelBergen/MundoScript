@@ -8,7 +8,7 @@ LeagueAPI = new LeagueAPI(APIKeys.LeagueApiKey, Region.NA);
 	LeagueAPI.getChampionMasteryByChampion(accountInfo, Champion.DRMUNDO, console.log);
 });*/
 
-LeagueAPI.getPositionalRankQueues(console.log);
+LeagueAPI.getStatus().then(console.log).catch(console.log);
 
 
 
