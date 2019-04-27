@@ -91,8 +91,11 @@ class LeagueAPI
 
 	getSummonerByName(summonerName)
 	{
+		const apiKey = this.apiKey;
+		const region = this.region;
+		
 		return new Promise(function(resolve, reject) {
-			makeAnHTTPSCall(getURLSummonerByName(summonerName, this.apiKey, this.region))
+			makeAnHTTPSCall(getURLSummonerByName(summonerName, apiKey, region))
 			.then(function(data) {
 				resolve(LeagueAccountInfo.from(data));
 			})
@@ -349,7 +352,7 @@ function makeAnHTTPSCall(URL)
 					}
 					else
 					{
-						reject('Failed: ' + parsedData);
+						reject(parsedData);
 					}
 				}
 				else
