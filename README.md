@@ -6,9 +6,12 @@ Usage:
 let LeagueAPI = require('./LeagueAPI/LeagueAPI.js');
 LeagueAPI = new LeagueAPI(LeagueApiKey, Region.NA);
 
-LeagueAPI.getSummonerByName('LeagueOfSausage', function(e) {
-	console.log(e);
-});
+LeagueAPI.getSummonerByName('LeagueOfSausage').then(function(data) {
+	summonerObject = data;
+	return LeagueAPI.getActiveGames(data);
+})
+.then(console.log)
+.catch(console.log);
 
 ```
 
