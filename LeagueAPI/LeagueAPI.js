@@ -1,5 +1,5 @@
 require('./classes');
-const https = require('https');
+https = require('./HttpsCaller');
 
 // Riot specifies this as a sample regexp to validate names
 // any visible Unicode letter characters, digits (0-9), spaces, underscores, and periods.
@@ -99,17 +99,23 @@ class LeagueAPI
 			.then(function(data) {
 				resolve(LeagueAccountInfo.from(data));
 			})
-			.catch(function(error) {
-				reject(error);
-			});
+			.catch(reject);
 		});
 	}
 	
 	getActiveGames(accountObj)
 	{
-		let summonerId = getSummonerIdFromParam(accountObj);
+		const summonerId = getSummonerIdFromParam(accountObj);
+		const apiKey = this.apiKey;
+		const region = this.region;
 		
-		return makeAnHTTPSCall(getURLActiveGames(summonerId, this.apiKey, this.region));
+		return new Promise(function(resolve, reject) {
+			makeAnHTTPSCall(getURLActiveGames(summonerId, apiKey, region))
+			.then(function(data) {
+				resolve(MatchInfo.from(data));
+			})
+			.catch(reject);
+		});
 	}
 	
 	getMatchList(accountObj)
@@ -141,9 +147,7 @@ class LeagueAPI
 				let championMasterObjects = getArrayOfChampionObjectsFromJSONList(data);
 				resolve(championMasterObjects);
 			})
-			.catch(function(error) {
-				reject(error);
-			});
+			.catch(reject);
 		});
 	}
 	
@@ -326,46 +330,12 @@ function getURLWithRegionAndAPI(url, apiKey, region)
 
 function isNumeric(n) 
 {
-  return !isNaN(parseFloat(n)) && isFinite(n);
+	return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-function makeAnHTTPSCall(URL)
+function makeAnHTTPSCall(url)
 {
-	return new Promise(function(resolve, reject) {
-		https.get(URL, (resp) => {
-		  let data = '';
-
-		  // A chunk of data has been recieved.
-		  resp.on('data', (chunk) => {
-			data += chunk;
-		  });
-
-		  // The whole response has been received.
-		  resp.on('end', () => {
-				let parsedData = JSON.parse(data);
-
-				if (parsedData.status)
-				{
-					if (parsedData.status.status_code == '403')
-					{
-						reject('Forbidden. Ensure api key is up to date.');
-					}
-					else
-					{
-						reject(parsedData);
-					}
-				}
-				else
-				{
-					resolve(parsedData);
-				}
-		  });
-
-		// TODO: Errors are important, save to a database or Log file
-		}).on("error", (err) => {
-		  console.log("Error: " + err.message);
-		});
-	});
+	return https.makeAnHTTPSCall(url);
 }
 
 module.exports = LeagueAPI;
