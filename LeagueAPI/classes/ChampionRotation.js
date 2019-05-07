@@ -1,5 +1,3 @@
-Champion = require('./Champion.js');
-
 class ChampionRotation
 {
 	constructor(freeChampions, freeChampionsForNewPlayers, maxNewPlayerLevel)

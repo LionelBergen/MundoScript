@@ -61,3 +61,14 @@ LeagueAPI.initialize().then(function() {
 	});*/
 })
 .catch(console.log);
+
+
+
+
+
+// Example usage:
+/*LeagueAPI.getSummonerByName('LeagueOfSausage').then(function(data) {
+	return LeagueAPI.getMatchList(data);
+})
+.then(console.log)
+.catch(console.log);*/
