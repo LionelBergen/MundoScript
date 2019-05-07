@@ -60,5 +60,5 @@ typings/
 # next.js build output
 .next
 
-# League / Reddit /etc api keys
+# League api keys
 /apiKeys.js
