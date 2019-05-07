@@ -1,5 +1,5 @@
 require('./classes');
-https = require('./HttpsCaller');
+const https = require('./HttpsCaller');
 
 // Riot specifies this as a sample regexp to validate names
 // any visible Unicode letter characters, digits (0-9), spaces, underscores, and periods.
@@ -39,12 +39,53 @@ const GET_THIRD_PARTY_CODE_URL = 'https://%region%.api.riotgames.com/lol/platfor
 // TOURNAMENT-STUB-V4
 // TOURNAMENT-V4
 
+let map;
+let summoner;
+let champion;
+let team;
+let profileIcon;
+let runes;
+let fullPerks;
+
 class LeagueAPI
 {
 	constructor(apiKey, region)
 	{
 		this.apiKey = apiKey;
 		this.region = region;
+		this.fullyLoadClasses = false;
+	}
+	
+	/**
+	 * Uses local or DDragon JSON files to create Objects used in results
+	 * For example, this will changed 'mapId: 12' to 'mapObject: { id: 12 name: howlingAbyss ... }
+	*/
+	initialize()
+	{
+		var thisPointer = this;
+		return new Promise(function (resolve, reject) {
+			const getClassesDataFromJSON = require('./LeagueClassHandler.js');
+			getClassesDataFromJSON().then(function(leagueClasses) {
+				map = leagueClasses.map;
+				summoner = leagueClasses.summoner;
+				champion = leagueClasses.champion;
+				team = leagueClasses.team;
+				profileIcon = leagueClasses.profileIcon;
+				runes = leagueClasses.runes;
+				fullPerks = leagueClasses.fullPerks;
+			})
+			.then(function() {
+				console.log('Set fully load classes to true');
+				thisPointer.fullyLoadClasses = true;
+				resolve();
+			})
+			.catch(reject);
+		});
+	}
+	
+	setFullyLoadClasses(fullyLoadClasses)
+	{
+		this.fullyLoadClasses = fullyLoadClasses;
 	}
 	
 	changeRegion(region)
@@ -66,22 +107,27 @@ class LeagueAPI
 	
 	getFeaturedGames()
 	{
-		return makeAnHTTPSCall(getURLFeaturedGames(this.apiKey, this.region));
+		return createPromiseContainingLoadedData(getURLFeaturedGames(this.apiKey, this.region), this.fullyLoadClasses);
 	}
 	
 	getMatch(matchId)
 	{
-		makeAnHTTPSCall(getMatchURL(matchId, this.apiKey, this.region));
+		const apiKey = this.apiKey;
+		const region = this.region;
+		
+		return createPromiseContainingLoadedData(getMatchURL(matchId, this.apiKey, this.region), this.fullyLoadClasses);
 	}
 	
 	getMatchByTournament(matchId, tournamentCode)
 	{
-		return makeAnHTTPSCall(getURLMatchByTournamentCodeAndMatchId(tournamentCode, matchId, this.apiKey, this.region));
+		const url = getURLMatchByTournamentCodeAndMatchId(tournamentCode, matchId, this.apiKey, this.region);
+		return createPromiseContainingLoadedData(url, this.fullyLoadClasses);
 	}
 	
 	getMatchIdsByTournament(tournamentCode)
 	{
-		return makeAnHTTPSCall(getURLMatchByTournamentCode(tournamentCode, this.apiKey, this.region));
+		const url = getURLMatchByTournamentCode(tournamentCode, this.apiKey, this.region);
+		return createPromiseContainingLoadedData(url, this.fullyLoadClasses);
 	}
 	
 	getPositionalRankQueues()
@@ -91,43 +137,30 @@ class LeagueAPI
 
 	getSummonerByName(summonerName)
 	{
-		const apiKey = this.apiKey;
-		const region = this.region;
+		const url = getURLSummonerByName(summonerName, this.apiKey, this.region);
 		
-		return new Promise(function(resolve, reject) {
-			makeAnHTTPSCall(getURLSummonerByName(summonerName, apiKey, region))
-			.then(function(data) {
-				resolve(LeagueAccountInfo.from(data));
-			})
-			.catch(reject);
-		});
+		return createPromiseContainingLoadedData(url, this.fullyLoadClasses, LeagueAccountInfo);
 	}
 	
 	getActiveGames(accountObj)
 	{
 		const summonerId = getSummonerIdFromParam(accountObj);
-		const apiKey = this.apiKey;
-		const region = this.region;
+		const url = getURLActiveGames(summonerId, this.apiKey, this.region);
 		
-		return new Promise(function(resolve, reject) {
-			makeAnHTTPSCall(getURLActiveGames(summonerId, apiKey, region))
-			.then(function(data) {
-				resolve(MatchInfo.from(data));
-			})
-			.catch(reject);
-		});
+		return createPromiseContainingLoadedData(url, this.fullyLoadClasses, MatchInfo);
 	}
 	
 	getMatchList(accountObj)
 	{
-		let accountId = getAccountIdFromParam(accountObj);
+		const accountId = getAccountIdFromParam(accountObj);
+		const url = getURLMatchList(accountId, this.apiKey, this.region);
 		
-		return makeAnHTTPSCall(getURLMatchList(accountId, this.apiKey, this.region));
+		return createPromiseContainingLoadedData(url, this.fullyLoadClasses);
 	}
 	
 	getMatchTimeline(matchId)
 	{
-		makeAnHTTPSCall(getURLMatchTimeline(matchId, this.apiKey, this.region));
+		return makeAnHTTPSCall(getURLMatchTimeline(matchId, this.apiKey, this.region));
 	}
 	
 	getChampionMasteryTotal(accountObj)
@@ -139,52 +172,51 @@ class LeagueAPI
 
 	getChampionMastery(accountObj)
 	{
-		let summonerId = getSummonerIdFromParam(accountObj);
+		const summonerId = getSummonerIdFromParam(accountObj);
+		const apiKey = this.apiKey;
+		const region = this.region;
 		
-		return new Promise(function(resolve, reject) {
-			makeAnHTTPSCall(getURLChampionMastery(summonerId, this.apiKey, this.region))
-			.then(function(data) {
-				let championMasterObjects = getArrayOfChampionObjectsFromJSONList(data);
-				resolve(championMasterObjects);
-			})
-			.catch(reject);
-		});
+		return createPromiseContainingLoadedData(getURLChampionMastery(summonerId, apiKey, region), this.fullyLoadClasses);
 	}
 	
 	getChampionMasteryByChampion(accountObj, championObj)
 	{
-		let summonerId = getSummonerIdFromParam(accountObj);
-		let championId = getChampionIdFromParam(championObj);
+		const summonerId = getSummonerIdFromParam(accountObj);
+		const championId = getChampionIdFromParam(championObj);
+		const url = getURLChampionMasteryByChampion(summonerId, championId, this.apiKey, this.region);
 		
-		return new Promise(function(resolve, reject) {
-			makeAnHTTPSCall(getURLChampionMasteryByChampion(summonerId, championId, this.apiKey, this.region))
-			.then(function(data) {
-				resolve(ChampionMastery.from(data));
-			})
-			.catch(reject);
-		});
+		return createPromiseContainingLoadedData(url, this.fullyLoadClasses);
 	}
 	
 	getFreeChampionRotation()
 	{
-		return new Promise(function(resolve, reject) { 
-			makeAnHTTPSCall(getURLChampRotation(this.apiKey, this.region)).then(function(data) {
-				resolve(ChampionRotation.from(data));
-			})
-			.catch(reject);
-		});
+		return createPromiseContainingLoadedData(getURLChampRotation(this.apiKey, this.region), this.fullyLoadClasses);
 	}
 }
 
-function getArrayOfChampionObjectsFromJSONList(data)
+function createPromiseContainingLoadedData(url, fullyLoadClasses, objectMappingClass)
 {
-	let championMasterObjects = [];
-	for (var i=0; i < data.length; i++)
+	return new Promise(function(resolve, reject) {
+		makeAnHTTPSCall(url)
+		.then(function(data) 
+		{
+			if (objectMappingClass)
+			{
+				data = objectMappingClass.from(data);
+			}
+			loadObject(data, fullyLoadClasses);
+			resolve(data);
+		})
+		.catch(reject);
+	});
+}
+
+function loadObject(data, fullyLoadClasses)
+{
+	if (fullyLoadClasses)
 	{
-		championMasterObjects.push(ChampionMastery.from(data[i]));
+		replaceObjectKeysWithValues(data);
 	}
-	
-	return championMasterObjects;
 }
 
 function getChampionIdFromParam(param)
@@ -195,9 +227,9 @@ function getChampionIdFromParam(param)
 	{
 		championId = param;
 	}
-	else if (param.value && isNumeric(param.value))
+	else if (param.key && isNumeric(param.key))
 	{
-		championId = param.value;
+		championId = param.key;
 	}
 	else
 	{
@@ -336,6 +368,83 @@ function isNumeric(n)
 function makeAnHTTPSCall(url)
 {
 	return https.makeAnHTTPSCall(url);
+}
+
+// Replaces object values such as MapId = 12 with the corresponding Object, such as MapId = { Howling abyss... };
+// TODO: Load the returned values from map, summoner, etc.
+function replaceObjectKeysWithValues(obj) 
+{
+	replaceObjectFoundByKey(obj, 'teamId', 'team', team);
+	replaceObjectFoundByKeyRunes(obj);
+	replaceObjectFoundByKey(obj, 'mapId', 'mapObject', map);
+	replaceObjectFoundByKey(obj, 'spell1Id', 'spell1', summoner);
+	replaceObjectFoundByKey(obj, 'spell2Id', 'spell2', summoner);
+	
+	replaceObjectFoundByKey(obj, 'championId', 'championObject', champion);
+	replaceObjectFoundByKey(obj, 'freeChampionIds', 'freeChampions', champion);
+	replaceObjectFoundByKey(obj, 'freeChampionIdsForNewPlayers', 'freeChampionsForNewPlayers', champion);
+	
+	replaceObjectFoundByKey(obj, 'profileIconId', 'profileIconObject', profileIcon);
+	replaceObjectFoundByKey(obj, 'profileIcon', 'profileIconObject', profileIcon);
+}
+
+// Runes have many functions to find by keys
+function replaceObjectFoundByKeyRunes(obj)
+{
+	const pointersToObjectsFound = [];
+	
+	for (var key in obj) 
+	{
+		var value = obj[key];
+		
+        if (typeof value === 'object') {
+            replaceObjectFoundByKeyRunes(value);
+        }
+        
+		if (key === 'perkIds')
+		{
+			obj[key] = fullPerks.getByPerkIds(obj[key]);
+			renamePropertyOnObject(obj, 'perkIds', 'perkObjects');
+        }
+		else if (key == 'perkStyle' || key == 'perkSubStyle')
+		{
+			obj[key] = runes.getByKey(obj[key]);
+			// don't rename the key
+			renamePropertyOnObject(obj, 'key', 'key');
+		}
+    }
+	
+	return pointersToObjectsFound;
+}
+
+function replaceObjectFoundByKey(obj, oldkey, newKey, classContainingReplacement)
+{
+	const pointersToObjectsFound = [];
+	
+	for (var key in obj) 
+	{
+		var value = obj[key];
+        if (typeof value === 'object') {
+            replaceObjectFoundByKey(value, oldkey, newKey, classContainingReplacement);
+        }
+
+        if (key === oldkey) {
+			obj[key] = classContainingReplacement.getByKey(obj[key]);
+			renamePropertyOnObject(obj, key, newKey);
+        }
+    }
+	
+	return pointersToObjectsFound;
+}
+
+function renamePropertyOnObject(object, oldKey, newKey)
+{
+	if (oldKey !== newKey) 
+	{
+		Object.defineProperty(object, newKey,
+			Object.getOwnPropertyDescriptor(object, oldKey));
+		delete object[oldKey];
+	}
 }
 
 module.exports = LeagueAPI;
