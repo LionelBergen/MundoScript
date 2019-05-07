@@ -333,15 +333,15 @@ function makeAnHTTPSCall(URL)
 {
 	return new Promise(function(resolve, reject) {
 		https.get(URL, (resp) => {
-		  let data = '';
+			let data = '';
 
-		  // A chunk of data has been recieved.
-		  resp.on('data', (chunk) => {
-			data += chunk;
-		  });
+		  	// A chunk of data has been recieved.
+		  	resp.on('data', (chunk) => {
+				data += chunk;
+		 	});
 
-		  // The whole response has been received.
-		  resp.on('end', () => {
+		  	// The whole response has been received.
+		  	resp.on('end', () => {
 				let parsedData = JSON.parse(data);
 
 				if (parsedData.status)
@@ -359,11 +359,9 @@ function makeAnHTTPSCall(URL)
 				{
 					resolve(parsedData);
 				}
-		  });
-
-		// TODO: Errors are important, save to a database or Log file
+		    });
 		}).on("error", (err) => {
-		  console.log("Error: " + err.message);
+			reject("Error: " + err.message);
 		});
 	});
 }
