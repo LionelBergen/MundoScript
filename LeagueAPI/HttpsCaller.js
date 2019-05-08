@@ -31,9 +31,8 @@ function makeAnHTTPSCall(URL)
 				}
 		  });
 
-		// TODO: Errors are important, save to a database or Log file
 		}).on("error", (err) => {
-		  console.log("Error: " + err.message);
+		  reject("Error: " + err.message);
 		});
 	});
 }

@@ -114,6 +114,9 @@ function getLeagueObject(latestApiVersion, objectJSONUrl)
 	return leagueObject;
 }
 
+/**
+ * Gets latest api version based on the get version url. E.G 9.9.1
+*/
 function getLatestApiVersion()
 {
 	return new Promise(function(resolve, reject) {
@@ -125,11 +128,17 @@ function getLatestApiVersion()
 	});
 }
 
+/**
+ * replaces '%url%' and '%apiversion%' with the paramaters passed
+*/
 function transformURL(url, prefixURL, apiVersion)
 {
 	return url.replace('%url%', prefixURL).replace('%apiversion%', apiVersion);
 }
 
+/**
+ * Given the import URL, tries to 'require()' it. If Module is not found, returns null/undefined.
+*/
 function tryToResolveImport(importUrl)
 {
 	let result;
