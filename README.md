@@ -1,6 +1,8 @@
 # LeagueAPIWrapper (Node.JS)
 Wrapper for all API methods
 
+![https://www.npmjs.com/package/leagueapiwrapper](https://nodei.co/npm/leagueapiwrapper.png)
+
 Usage:
 ```
 let LeagueAPI = require('./LeagueAPI/LeagueAPI.js');
