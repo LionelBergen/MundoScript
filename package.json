@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/LionelBergen/LeagueAPIWrapper/issues"
   },
-  "homepage": "https://github.com/LionelBergen/LeagueAPIWrapper#readme"
+  "homepage": "https://github.com/LionelBergen/LeagueAPIWrapper#readme",
+  "dependencies": {
+    "jshint": "^2.10.2"
+  }
 }
