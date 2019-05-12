@@ -1,0 +1,30 @@
+{
+  "name": "leagueapiwrapper",
+  "version": "1.0.0",
+  "description": "League API Wrapper. Easy to use wrapper for the League Of Legends API",
+  "main": "LeagueAPI/LeagueAPI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LionelBergen/LeagueAPIWrapper.git"
+  },
+  "keywords": [
+    "LeagueOfLegendsAPI",
+    "LoL",
+    "LoLAPI",
+    "LeagueAPI",
+    "League",
+    "Of",
+    "Legends",
+    "League",
+    "API"
+  ],
+  "author": "Lionel Bergen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LionelBergen/LeagueAPIWrapper/issues"
+  },
+  "homepage": "https://github.com/LionelBergen/LeagueAPIWrapper#readme"
+}
