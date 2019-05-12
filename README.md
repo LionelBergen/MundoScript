@@ -111,6 +111,49 @@ LeagueAPI.getSummonerByName('LeagueOfSausage')
 
 ####
 
+<details><summary>getStatus()</summary>
+	
+<p>
+	
+####
+```javascript
+// Returns the status of the LeagueAPI endpoints 
+LeagueAPI.getStatus()
+	.then(console.log)
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getFeaturedGames()</summary>
+	
+<p>
+	
+####
+```javascript
+// Returns the current featured games on League
+LeagueAPI.getFeaturedGames()
+	.then(console.log)
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getMatch(matchId)</summary>
+	
+<p>
+	
+####
+```javascript
+// matchId taken from a getMatchList call
+// Gets the MAtch object for the ID passed
+LeagueAPI.getMatch(2970107953)
+	.then(console.log)
+	.catch(console.log);
+```
+</p>
+</details>
+
 
 # Disclaimer
 
