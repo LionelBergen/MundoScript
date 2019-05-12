@@ -1,5 +1,7 @@
 # LeagueAPIWrapper (Node.JS)
-Wrapper for all API methods
+Simple Wrapper for all League Of Legends API methods
+
+![https://www.npmjs.com/package/leagueapiwrapper](https://nodei.co/npm/leagueapiwrapper.png)
 
 Usage:
 ```
