@@ -40,6 +40,77 @@ LeagueAPI.initialize()
 </p>
 </details>
 
+# Methods
+
+<details><summary>initialize</summary>
+
+<p>
+
+####
+
+```javascript
+LeagueAPI.initialize()
+    .then() {
+        // Objects will now contain full objects, instead of id's. 
+	// E.G from 'mapId: 12' to 'mapObject: { id: 12 name: howlingAbyss ... }'
+    })
+    .catch(console.log);
+```
+</p>
+</details>
+
+####
+
+<details><summary>setFullyLoadClasses(boolean)</summary>
+
+<p>
+
+####
+
+```javascript
+// Setting initialize() sets to true.
+// Must call initialize if setting this to true
+LeagueAPI.setFullyLoadClasses(false);
+```
+</p>
+</details>
+
+<details><summary>changeRegion(Region)</summary>
+
+<p>
+
+####
+
+```javascript
+// Changed Region for API calls
+LeagueAPI.changeRegion(Region.NA);
+```
+</p>
+</details>
+
+
+####
+
+<details><summary>getThirdPartyCode(AccountObject)</summary>
+
+<p>
+
+####
+
+```javascript
+LeagueAPI.getSummonerByName('LeagueOfSausage')
+	.then(function(accountInfo) { return LeagueAPI.getThirdPartyCode(accountInfo) })
+	.then(function(data) {
+		console.log(data);
+	})
+	.catch(console.log);
+```
+</p>
+</details>
+
+
+####
+
 
 # Disclaimer
 
