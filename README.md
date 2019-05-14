@@ -146,8 +146,36 @@ LeagueAPI.getFeaturedGames()
 ####
 ```javascript
 // matchId taken from a getMatchList call
-// Gets the MAtch object for the ID passed
+// Gets the Match object for the ID passed
 LeagueAPI.getMatch(2970107953)
+	.then(console.log)
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getMatchByTournament(matchId, tournamentCode)</summary>
+	
+<p>
+	
+####
+```javascript
+// Gets the Match object for the ID passed with tournamentCode. Note: I don't have an example tournament code
+LeagueAPI.getMatchByTournament(2970107953, tournamentCode)
+	.then(console.log)
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getMatchIdsByTournament(tournamentCode)</summary>
+	
+<p>
+	
+####
+```javascript
+// Gets the Match ids for the tournamentCode. Note: I don't have an example tournament code
+LeagueAPI.getMatchIdsByTournament(tournamentCode)
 	.then(console.log)
 	.catch(console.log);
 ```
