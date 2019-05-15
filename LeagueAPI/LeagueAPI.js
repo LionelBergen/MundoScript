@@ -221,19 +221,21 @@ function loadObject(data, fullyLoadClasses)
 
 function getChampionIdFromParam(param)
 {
-	championId = '';
+	championId = getNumberFromParam(param);
 	
-	if (param instanceof String && isNumeric(param))
+	if (!championId)
 	{
-		championId = param;
-	}
-	else if (param.key && isNumeric(param.key))
-	{
-		championId = param.key;
-	}
-	else
-	{
-		throw 'invalid argument, requires championId or Champion object';
+		championId = getNumberFromParam(param.key);
+		
+		if (!championId)
+		{
+			championId = getNumberFromParam(param.championId)
+			
+			if (!championId)
+			{
+				throw 'invalid argument, requires championId or Champion object';
+			}
+		}
 	}
 	
 	return championId;
@@ -245,13 +247,14 @@ function getSummonerIdFromParam(param)
 	
 	if (param instanceof LeagueAccountInfo)
 	{
-		summonerId = param.id;
-	}
-	else if (param instanceof String)
-	{
-		summonerId = param;
+		summonerId = getStringFromParam(param.id);
 	}
 	else
+	{
+		summonerId = getStringFromParam(param);
+	}
+	
+	if (!summonerId)
 	{
 		throw 'invalid argument, requires summonerId or LeagueAccountInfo object';
 	}
@@ -265,18 +268,39 @@ function getAccountIdFromParam(param)
 	
 	if (param instanceof LeagueAccountInfo)
 	{
-		accountId = param.accountId;
-	}
-	else if (param instanceof String)
-	{
-		accountId = param;
+		accountId = getStringFromParam(param.accountId);
 	}
 	else
+	{
+		accountId = getStringFromParam(param);
+	}
+	
+	if (!accountId)
 	{
 		throw 'invalid argument, requires accountId or LeagueAccountInfo object';
 	}
 	
 	return accountId;
+}
+
+function getStringFromParam(param)
+{
+	let paramType = typeof param;
+	
+	if (param && paramType == 'string')
+	{
+		return param;
+	}
+}
+
+function getNumberFromParam(param)
+{
+	let paramType = typeof param;
+	
+	if (param && (paramType == 'string' || paramType == 'number') && isNumeric(param))
+	{
+		return param;
+	}
 }
 
 function getMatchURL(matchId, apiKey, region)
