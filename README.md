@@ -283,7 +283,7 @@ LeagueAPI.getSummonerByName('LeagueOfSausage')
 </p>
 </details>
 
-<details><summary>getChampionMasteryTotal(accountObject)</summary>
+<details><summary>getChampionMastery(accountObject)</summary>
 	
 <p>
 	
@@ -298,6 +298,23 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 	{
 		console.log(championMasteryList);
 	})
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getChampionMasteryByChampion(accountObject, championObj)</summary>
+	
+<p>
+	
+####
+```javascript
+const drMundoChampId = 36;
+const leagueOfDrMundoSummonerId = 'IE2WdICfZnhEWYPIBfHio7jxCeo1IFynclJAPquqENRrpeYK';
+
+// Returns the championMastery details for the given account/accountId and champion/championId
+LeagueAPI.getChampionMasteryByChampion(leagueOfDrMundoSummonerId, drMundoChampId)
+	.then(console.log)
 	.catch(console.log);
 ```
 </p>
