@@ -88,7 +88,6 @@ LeagueAPI.changeRegion(Region.NA);
 </p>
 </details>
 
-
 ####
 
 <details><summary>getThirdPartyCode(AccountObject)</summary>
@@ -107,7 +106,6 @@ LeagueAPI.getSummonerByName('LeagueOfSausage')
 ```
 </p>
 </details>
-
 
 ####
 
@@ -171,7 +169,7 @@ LeagueAPI.getMatchByTournament(2970107953, tournamentCode)
 <details><summary>getMatchIdsByTournament(tournamentCode)</summary>
 	
 <p>
-	
+
 ####
 ```javascript
 // Gets the Match ids for the tournamentCode. Note: I don't have an example tournament code
@@ -185,7 +183,7 @@ LeagueAPI.getMatchIdsByTournament(tournamentCode)
 <details><summary>getPositionalRankQueues()</summary>
 	
 <p>
-	
+
 ####
 ```javascript
 LeagueAPI.getPositionalRankQueues()
@@ -198,7 +196,7 @@ LeagueAPI.getPositionalRankQueues()
 <details><summary>getSummonerByName(summonerName)</summary>
 	
 <p>
-	
+
 ####
 ```javascript
 // Returns an accountObject which can be used in other methods, or view account information on
@@ -320,6 +318,20 @@ LeagueAPI.getChampionMasteryByChampion(leagueOfDrMundoSummonerId, drMundoChampId
 </p>
 </details>
 
+<details><summary>getFreeChampionRotation()</summary>
+	
+<p>
+	
+####
+```javascript
+
+// Returns details for the current champion rotation. Initialize first for details on each champion
+LeagueAPI.getFreeChampionRotation()
+	.then(console.log)
+	.catch(console.log);
+```
+</p>
+</details>
 
 # Disclaimer
 
