@@ -60,8 +60,6 @@ LeagueAPI.initialize()
 </p>
 </details>
 
-####
-
 <details><summary>setFullyLoadClasses(boolean)</summary>
 
 <p>
