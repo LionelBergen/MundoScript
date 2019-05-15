@@ -96,11 +96,10 @@ LeagueAPI.changeRegion(Region.NA);
 <p>
 
 ####
-
 ```javascript
-// Returns thirdPartyCode. Note: will 404 if no thirdPartyCode is available for the accountInfo/accountId
-LeagueAPI.getSummonerByName('LeagueOfSausage')
-	.then(function(accountInfo) { return LeagueAPI.getThirdPartyCode(accountInfo) })
+// Returns thirdPartyCode. Note: will 'Forbidden' if no thirdPartyCode is available for the accountInfo/accountId
+// Note: I don't have an accountId example that works here
+LeagueAPI.getThirdPartyCode(accountId)
 	.then(function(data) {
 		console.log(data);
 	})
@@ -108,8 +107,6 @@ LeagueAPI.getSummonerByName('LeagueOfSausage')
 ```
 </p>
 </details>
-
-####
 
 <details><summary>getStatus()</summary>
 	
