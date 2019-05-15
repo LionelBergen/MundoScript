@@ -49,10 +49,11 @@ LeagueAPI.initialize()
 ####
 
 ```javascript
+// Objects will now contain full objects, instead of id's. 
+// E.G from 'mapId: 12' to 'mapObject: { id: 12 name: howlingAbyss ... }'
 LeagueAPI.initialize()
     .then() {
-        // Objects will now contain full objects, instead of id's. 
-	// E.G from 'mapId: 12' to 'mapObject: { id: 12 name: howlingAbyss ... }'
+    	// LeagueAPI returned objects will now have details from DDRagon API.
     })
     .catch(console.log);
 ```
@@ -97,6 +98,7 @@ LeagueAPI.changeRegion(Region.NA);
 ####
 
 ```javascript
+// Returns thirdPartyCode. Note: will 404 if no thirdPartyCode is available for the accountInfo/accountId
 LeagueAPI.getSummonerByName('LeagueOfSausage')
 	.then(function(accountInfo) { return LeagueAPI.getThirdPartyCode(accountInfo) })
 	.then(function(data) {
