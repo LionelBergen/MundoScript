@@ -182,6 +182,127 @@ LeagueAPI.getMatchIdsByTournament(tournamentCode)
 </p>
 </details>
 
+<details><summary>getPositionalRankQueues()</summary>
+	
+<p>
+	
+####
+```javascript
+LeagueAPI.getPositionalRankQueues()
+	.then(console.log)
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getSummonerByName(summonerName)</summary>
+	
+<p>
+	
+####
+```javascript
+// Returns an accountObject which can be used in other methods, or view account information on
+LeagueAPI.getSummonerByName('LeagueOfDrMundo')
+	.then(function(accountObject) {
+		console.log(accountObject);
+	})
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getActiveGames(accountObject)</summary>
+	
+<p>
+	
+####
+```javascript
+LeagueAPI.getSummonerByName('LeagueOfDrMundo')
+	.then(function(accountObject) {
+		// Gets active games. Will return 404 if not currently in an active game
+		return LeagueAPI.getActiveGames(accountObject);
+	})
+	.then(function(activeGames) { 
+		console.log(activeGames);
+	})
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getMatchList(accountObject)</summary>
+	
+<p>
+	
+####
+```javascript
+LeagueAPI.getSummonerByName('LeagueOfDrMundo')
+	.then(function(accountObject) {
+		// Gets match list for the account
+		return LeagueAPI.getMatchList(accountObject);
+	})
+	.then(function(activeGames) { 
+		console.log(activeGames);
+	})
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getMatchTimeline(matchId)</summary>
+	
+<p>
+	
+####
+```javascript
+// Returns a timeline of the match
+LeagueAPI.getMatchTimeline(3026936146)
+	.then(console.log)
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getChampionMasteryTotal(accountObject)</summary>
+	
+<p>
+	
+####
+```javascript
+LeagueAPI.getSummonerByName('LeagueOfSausage')
+	.then(function(accountObj) {
+		// Returns the total champion master (sum of all champion mastery for all champions)
+		return LeagueAPI.getChampionMasteryTotal(accountObj);
+	})
+	.then(function(championMasteryTotal)
+	{
+		console.log(championMasteryTotal);
+	})
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getChampionMasteryTotal(accountObject)</summary>
+	
+<p>
+	
+####
+```javascript
+LeagueAPI.getSummonerByName('LeagueOfDrMundo')
+	.then(function(accountObj) {
+		// Returns a list of every single champion played by the account, along with mastery details
+		return LeagueAPI.getChampionMastery(accountObj);
+	})
+	.then(function(championMasteryList)
+	{
+		console.log(championMasteryList);
+	})
+	.catch(console.log);
+```
+</p>
+</details>
+
 
 # Disclaimer
 
