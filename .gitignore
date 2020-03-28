@@ -62,3 +62,6 @@ typings/
 
 # League / Reddit /etc api keys
 /apiKeys.js
+
+# Test file. Use an unlikely name.
+test_local_45454.js
