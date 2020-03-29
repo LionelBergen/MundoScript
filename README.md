@@ -177,13 +177,26 @@ LeagueAPI.getMatchIdsByTournament(tournamentCode)
 </p>
 </details>
 
-<details><summary>getPositionalRankQueues()</summary>
+<details><summary>getURLClashBySummonerId(summonerId, apiKey, region)</summary>
 	
 <p>
 
 ####
 ```javascript
-LeagueAPI.getPositionalRankQueues()
+LeagueAPI.getURLClashBySummonerId(summonerId, apiKey, region)
+	.then(console.log)
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getURLClashTournament(apiKey, region)</summary>
+	
+<p>
+
+####
+```javascript
+LeagueAPI.getURLClashTournament(apiKey, region)
 	.then(console.log)
 	.catch(console.log);
 ```

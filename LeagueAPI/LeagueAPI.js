@@ -13,8 +13,14 @@ const GET_CHAMPION_MASTER_TOTAL_URL = 'https://%region%.api.riotgames.com/lol/ch
 // CHAMPION-V3
 const GET_CHAMPION_ROTATION_URL = 'https://%region%.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=%apikey%';
 
-// LEAGUE-V4 (1/9)
-const GET_QUEUES_WITH_RANKS_URL = 'https://%region%.api.riotgames.com/lol/league/v4/positional-rank-queues?api_key=%apikey%';
+// CLASH-V1 (2/5)
+const GET_CLASH_BY_SUMMONER_ID_URL = 'https://%region%.api.riotgames.com/lol/clash/v1/players/by-summoner/%summoner_id%?api_key=%apikey%';
+const GET_CLASH_TOURNAMENTS_URL = 'https://%region%.api.riotgames.com/lol/clash/v1/tournaments?api_key=%apikey%';
+
+// LEAGUE-EXP-V4 (0/1) Not gunna bother with this, says it's experimental
+
+// LEAGUE-V4 (1/6)
+const GET_QUEUES_WITH_RANKS_URL = 'https://%region%.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/%queue_type%?api_key=%apikey%';
 
 // LOL-STATUS-V3
 const GET_STATUS_URL = 'https://%region%.api.riotgames.com/lol/status/v3/shard-data?api_key=%apikey%';
@@ -129,11 +135,6 @@ class LeagueAPI
 		const url = getURLMatchByTournamentCode(tournamentCode, this.apiKey, this.region);
 		return createPromiseContainingLoadedData(url, this.fullyLoadClasses);
 	}
-	
-	getPositionalRankQueues()
-	{
-		return makeAnHTTPSCall(getURLQueuesWithRanks(this.apiKey, this.region));
-	}
 
 	getSummonerByName(summonerName)
 	{
@@ -187,6 +188,20 @@ class LeagueAPI
 		
 		return createPromiseContainingLoadedData(url, this.fullyLoadClasses);
 	}
+  
+  getClash(accountObj)
+  {
+    const summonerId = getSummonerIdFromParam(accountObj);
+    
+    return makeAnHTTPSCall(getURLClashBySummonerId(summonerId, this.apiKey, this.region));
+  }
+  
+  getClashTournament()
+  {
+    const url = getURLClashTournament(this.apiKey, this.region);
+
+    return makeAnHTTPSCall(url);
+  }
 	
 	getFreeChampionRotation()
 	{
@@ -348,11 +363,6 @@ function getURLStatus(apiKey, region)
 	return getURLWithRegionAndAPI(GET_STATUS_URL, apiKey, region);
 }
 
-function getURLQueuesWithRanks(apiKey, region)
-{
-	return getURLWithRegionAndAPI(GET_QUEUES_WITH_RANKS_URL, apiKey, region);
-}
-
 function getURLChampionMastery(summonerName, apiKey, region)
 {
 	return getURLWithRegionAndAPI(GET_CHAMPION_MASTERY_URL, apiKey, region).replace('%name%', summonerName);
@@ -372,6 +382,18 @@ function getURLChampRotation(apiKey, region)
 {
 	return getURLWithRegionAndAPI(GET_CHAMPION_ROTATION_URL, apiKey, region);
 }
+
+/** CLASH-V1 **/
+function getURLClashBySummonerId(summonerId, apiKey, region)
+{
+  return getURLWithRegionAndAPI(GET_CLASH_BY_SUMMONER_ID_URL, apiKey, region).replace('%summoner_id%', summonerId);
+}
+
+function getURLClashTournament(apiKey, region)
+{
+  return getURLWithRegionAndAPI(GET_CLASH_TOURNAMENTS_URL, apiKey, region);
+}
+/** end CLASH-V1 **/
 
 function getThirdPartyCode(summonerId, apiKey, region)
 {
@@ -420,23 +442,24 @@ function replaceObjectFoundByKeyRunes(obj)
 	for (var key in obj) 
 	{
 		var value = obj[key];
-		
-        if (typeof value === 'object') {
-            replaceObjectFoundByKeyRunes(value);
-        }
-        
+
+    if (typeof value === 'object') 
+    {
+      replaceObjectFoundByKeyRunes(value);
+    }
+
 		if (key === 'perkIds')
 		{
 			obj[key] = fullPerks.getByPerkIds(obj[key]);
 			renamePropertyOnObject(obj, 'perkIds', 'perkObjects');
-        }
+    }
 		else if (key == 'perkStyle' || key == 'perkSubStyle')
 		{
 			obj[key] = runes.getByKey(obj[key]);
 			// don't rename the key
 			renamePropertyOnObject(obj, 'key', 'key');
 		}
-    }
+  }
 	
 	return pointersToObjectsFound;
 }
@@ -448,15 +471,18 @@ function replaceObjectFoundByKey(obj, oldkey, newKey, classContainingReplacement
 	for (var key in obj) 
 	{
 		var value = obj[key];
-        if (typeof value === 'object') {
-            replaceObjectFoundByKey(value, oldkey, newKey, classContainingReplacement);
-        }
-
-        if (key === oldkey) {
-			obj[key] = classContainingReplacement.getByKey(obj[key]);
-			renamePropertyOnObject(obj, key, newKey);
-        }
+    
+    if (typeof value === 'object') 
+    {
+        replaceObjectFoundByKey(value, oldkey, newKey, classContainingReplacement);
     }
+
+    if (key === oldkey) 
+    {
+		  obj[key] = classContainingReplacement.getByKey(obj[key]);
+		  renamePropertyOnObject(obj, key, newKey);
+    }
+  }
 	
 	return pointersToObjectsFound;
 }
@@ -466,7 +492,7 @@ function renamePropertyOnObject(object, oldKey, newKey)
 	if (oldKey !== newKey) 
 	{
 		Object.defineProperty(object, newKey,
-			Object.getOwnPropertyDescriptor(object, oldKey));
+		Object.getOwnPropertyDescriptor(object, oldKey));
 		delete object[oldKey];
 	}
 }
