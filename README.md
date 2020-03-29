@@ -218,13 +218,13 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo').then(function(accountObject) {
 </p>
 </details>
 
-<details><summary>getURLClashTournament(apiKey, region)</summary>
+<details><summary>getClashTournament()</summary>
 	
 <p>
 
 ####
 ```javascript
-LeagueAPI.getURLClashTournament(apiKey, region)
+LeagueAPI.getClashTournament()
 	.then(console.log)
 	.catch(console.log);
 ```
