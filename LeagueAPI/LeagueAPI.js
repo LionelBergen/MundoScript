@@ -20,7 +20,7 @@ const GET_CLASH_TOURNAMENTS_URL = 'https://%region%.api.riotgames.com/lol/clash/
 // LEAGUE-EXP-V4 (0/1) Not gunna bother with this, says it's experimental
 
 // LEAGUE-V4 (1/6)
-const GET_QUEUES_WITH_RANKS_URL = 'https://%region%.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/%queue_type%?api_key=%apikey%';
+const GET_LEAGUE_BY_SUMMONER_URL = 'https://%region%.api.riotgames.com/lol/league/v4/entries/by-summoner/%summoner_id%?api_key=%apikey%';
 
 // LOL-STATUS-V3
 const GET_STATUS_URL = 'https://%region%.api.riotgames.com/lol/status/v3/shard-data?api_key=%apikey%';
@@ -163,6 +163,14 @@ class LeagueAPI
 	{
 		return makeAnHTTPSCall(getURLMatchTimeline(matchId, this.apiKey, this.region));
 	}
+  
+  getLeagueRanking(accountObj) 
+  {
+		const summonerId = getSummonerIdFromParam(accountObj);
+    const url = getURLLeagueBySummoner(summonerId, this.apiKey, this.region);
+    
+    return makeAnHTTPSCall(url);
+  }
 	
 	getChampionMasteryTotal(accountObj)
 	{
@@ -356,6 +364,11 @@ function getURLActiveGames(summonerId, apiKey, region)
 function getURLFeaturedGames(apiKey, region)
 {
 	return getURLWithRegionAndAPI(GET_FEATURED_GAMES_URL, apiKey, region);
+}
+
+function getURLLeagueBySummoner(summonerId, apiKey, region)
+{
+  return getURLWithRegionAndAPI(GET_LEAGUE_BY_SUMMONER_URL, apiKey, region).replace('%summoner_id%', summonerId);
 }
 
 function getURLStatus(apiKey, region)

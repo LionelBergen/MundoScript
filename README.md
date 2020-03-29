@@ -177,15 +177,43 @@ LeagueAPI.getMatchIdsByTournament(tournamentCode)
 </p>
 </details>
 
-<details><summary>getURLClashBySummonerId(summonerId, apiKey, region)</summary>
+<details><summary>getClash(accountObj)</summary>
 	
 <p>
 
 ####
 ```javascript
-LeagueAPI.getURLClashBySummonerId(summonerId, apiKey, region)
+LeagueAPI.getClash(accountObj)
 	.then(console.log)
 	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getClashTournament()</summary>
+
+<p>
+
+####
+```javascript
+LeagueAPI.getClashTournament()
+	.then(console.log)
+	.catch(console.log);
+```
+</p>
+</details>
+
+<details><summary>getLeagueRanking(accountObject)</summary>
+
+<p>
+
+####
+```javascript
+LeagueAPI.getSummonerByName('LeagueOfDrMundo').then(function(accountObject) {
+	LeagueAPI.getLeagueRanking(accountObject)
+		.then(console.log)
+		.catch(console.log);
+});
 ```
 </p>
 </details>
