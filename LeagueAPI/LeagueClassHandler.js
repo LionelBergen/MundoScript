@@ -18,28 +18,28 @@ module.exports = function getClassesDataFromJSON()
 	return new Promise(function(resolve, reject)
 	{
 		getLatestApiVersion().then(function(latestApiVersion) {
-			const mapObj = getLeagueObject(latestApiVersion, mapJsonURI);
-			mapObj.getByKey = createFindByFunction('MapId');
-			
-			const summonerObj = getLeagueObject(latestApiVersion, summonerJsonURI);
-			summonerObj.getByKey = createFindByFunction('key');
-			
-			const championObj = getLeagueObject(latestApiVersion, championJsonURI);
-			championObj.getByKey = createFindByFunction('key');
-			
-			const runesPerksObj = getLeagueObject(latestApiVersion, runesJsonURI);
-			runesPerksObj.getByKey = function(idValue) { 
-				let objs = Object.values(this);
-				
-				return Object.values(objs).find(c => {return c['id'] == idValue});
-			}
-			
-			const fullPerkObj = getLeagueFullPerksObject(latestApiVersion);
-			fullPerkObj.getByKey = createFindByFunction('id');
-			
-			getLeagueObject(latestApiVersion, profileIconURI).then(function(profileIconObj) {
+			const mapPromise = getLeagueObject(latestApiVersion, mapJsonURI);
+			const summonerPromise = getLeagueObject(latestApiVersion, summonerJsonURI);
+			const championPromise = getLeagueObject(latestApiVersion, championJsonURI);
+			const runesPerksPromise = getLeagueObject(latestApiVersion, runesJsonURI);
+			const fullPerkPromise = getLeagueFullPerksObject(latestApiVersion);
+      const profileIconPromise = getLeagueObject(latestApiVersion, profileIconURI);
+
+      Promise.all([mapPromise, summonerPromise, championPromise, runesPerksPromise, fullPerkPromise, profileIconPromise]).then(function(data) {
+        const mapObj = data[0];
+        const summonerObj = data[1];
+        const championObj = data[2];
+        const runesPerksObj = data[3];
+        const fullPerkObj = data[4];
+        const profileIconObj = data[5];
+
+        mapObj.getByKey = createFindByFunction('MapId');
+        summonerObj.getByKey = createFindByFunction('key');
+			  championObj.getByKey = createFindByFunction('key');
+        runesPerksObj.getByKey = function(idValue) { let objs = Object.values(this); return Object.values(objs).find(c => {return c['id'] == idValue});	}
+			  fullPerkObj.getByKey = createFindByFunction('id');
         profileIconObj.getByKey = function(id) { return profileIconObj[id]; };
-        
+
         const teamObj = {'200': 'red', '100': 'blue'};
         teamObj.getByKey = function getByKey(id) { if (id == '200') return 'red'; else if (id == 100) return 'blue'; };
 
@@ -56,22 +56,22 @@ function createFindByFunction(keyNameToFindBy)
 {
 	return function(key)
 	{
-		const objs = Object.values(this);
-		
-		if (Array.isArray(key))
-		{
-			const foundObjects = [];
-			
-			for (let i = 0; i < key.length; i++)
-			{
-				foundObjects.push(findBy(objs, keyNameToFindBy, key[i]));
-			}
-			
-			return foundObjects;
-		}
-		
-		return findBy(objs, keyNameToFindBy, key);
-	}
+    const objs = Object.values(this);
+    
+    if (Array.isArray(key))
+    {
+      const foundObjects = [];
+      
+      for (let i = 0; i < key.length; i++)
+      {
+        foundObjects.push(findBy(objs, keyNameToFindBy, key[i]));
+      }
+      
+      return foundObjects;
+    }
+    
+    return findBy(objs, keyNameToFindBy, key);
+  }
 }
 
 function findBy(propertyArray, keyNameToFindBy, keyToFind)
@@ -85,21 +85,28 @@ function findBy(propertyArray, keyNameToFindBy, keyToFind)
 			break;
 		}
 	}
-	
+  
 	return foundSummonerObj;
 }
 
 // Full perk information is special since there is no official API for it.
 function getLeagueFullPerksObject(latestApiVersion)
 {
-	let url = transformURL(localPerkURI, localURL, latestApiVersion);
-	let leagueObject = tryToResolveImport(url);
-	if (!leagueObject)
-	{
-		leagueObject = https.makeAnHTTPSCall(unofficalPerkURI);
-	}
-	
-	return leagueObject;
+  return new Promise(function(resolve, reject) {
+    let url = transformURL(localPerkURI, localURL, latestApiVersion);
+    let leagueObject = tryToResolveImport(url);
+    
+    if (!leagueObject)
+    {
+      https.makeAnHTTPSCall(unofficalPerkURI).then(function(data) {
+        resolve(data);
+      });
+    }
+    else
+    {
+      resolve(leagueObject);
+    }
+  });
 }
 
 function getLeagueObject(latestApiVersion, objectJSONUrl)
@@ -115,7 +122,9 @@ function getLeagueObject(latestApiVersion, objectJSONUrl)
       https.makeAnHTTPSCall(url).then(function(data) {
         resolve(data);
       }).catch(reject);
-    } else {
+    } 
+    else 
+    {
       resolve(leagueObject);
     }
   });

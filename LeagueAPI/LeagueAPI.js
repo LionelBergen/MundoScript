@@ -40,7 +40,7 @@ const GET_FEATURED_GAMES_URL = 'https://%region%.api.riotgames.com/lol/spectator
 const GET_SUMMONER_BY_NAME_URL = 'https://%region%.api.riotgames.com/lol/summoner/v4/summoners/by-name/%name%?api_key=%apikey%';
 
 // THIRD_PARTY_CODE-V4
-const GET_THIRD_PARTY_CODE_URL = 'https://%region%.api.riotgames.com/lol/platform/v4/third-party-code/by-summoner/%summonerid%?api_key=%apikey'
+const GET_THIRD_PARTY_CODE_URL = 'https://%region%.api.riotgames.com/lol/platform/v4/third-party-code/by-summoner/%summonerid%?api_key=%apikey';
 
 // TOURNAMENT-STUB-V4
 // TOURNAMENT-V4
@@ -69,8 +69,9 @@ class LeagueAPI
 	initialize()
 	{
 		var thisPointer = this;
-		return new Promise(function (resolve, reject) {
-			const getClassesDataFromJSON = require('./LeagueClassHandler.js');
+		return new Promise(function(resolve, reject) {
+      const getClassesDataFromJSON = require('./LeagueClassHandler.js');
+      
 			getClassesDataFromJSON().then(function(leagueClasses) {
 				map = leagueClasses.map;
 				summoner = leagueClasses.summoner;
@@ -438,8 +439,8 @@ function replaceObjectKeysWithValues(obj)
 	replaceObjectFoundByKey(obj, 'mapId', 'mapObject', map);
 	replaceObjectFoundByKey(obj, 'spell1Id', 'spell1', summoner);
 	replaceObjectFoundByKey(obj, 'spell2Id', 'spell2', summoner);
-	
 	replaceObjectFoundByKey(obj, 'championId', 'championObject', champion);
+	replaceObjectFoundByKey(obj, 'champion', 'championObject', champion);
 	replaceObjectFoundByKey(obj, 'freeChampionIds', 'freeChampions', champion);
 	replaceObjectFoundByKey(obj, 'freeChampionIdsForNewPlayers', 'freeChampionsForNewPlayers', champion);
 	
