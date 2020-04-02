@@ -37,14 +37,15 @@ module.exports = function getClassesDataFromJSON()
 			const fullPerkObj = getLeagueFullPerksObject(latestApiVersion);
 			fullPerkObj.getByKey = createFindByFunction('id');
 			
-			const profileIconObj = getLeagueObject(latestApiVersion, profileIconURI).data;
-			profileIconObj.getByKey = function(id) { return profileIconObj[id]; };
-			
-			const teamObj = {'200': 'red', '100': 'blue'};
-			teamObj.getByKey = function getByKey(id) { if (id == '200') return 'red'; else if (id == 100) return 'blue'; };
+			getLeagueObject(latestApiVersion, profileIconURI).then(function(profileIconObj) {
+        profileIconObj.getByKey = function(id) { return profileIconObj[id]; };
+        
+        const teamObj = {'200': 'red', '100': 'blue'};
+        teamObj.getByKey = function getByKey(id) { if (id == '200') return 'red'; else if (id == 100) return 'blue'; };
 
-			resolve({'map': mapObj, 'summoner': summonerObj, 'champion': championObj, 'team': teamObj,
-				'profileIcon' : profileIconObj, 'runes': runesPerksObj, 'fullPerks': fullPerkObj});
+        resolve({'map': mapObj, 'summoner': summonerObj, 'champion': championObj, 'team': teamObj,
+          'profileIcon' : profileIconObj, 'runes': runesPerksObj, 'fullPerks': fullPerkObj});
+      });
 		})
 		.catch(reject);
 	});
@@ -103,15 +104,21 @@ function getLeagueFullPerksObject(latestApiVersion)
 
 function getLeagueObject(latestApiVersion, objectJSONUrl)
 {
-	let url = transformURL(objectJSONUrl, localURL, latestApiVersion);
-	let leagueObject = tryToResolveImport(url);
-	if (!leagueObject)
-	{
-		url = transformURL(objectJSONUrl, ddragonURL, latestApiVersion);
-		leagueObject = https.makeAnHTTPSCall(url);
-	}
-	
-	return leagueObject;
+  return new Promise(function(resolve, reject) {
+    let url = transformURL(objectJSONUrl, localURL, latestApiVersion);
+    let leagueObject = tryToResolveImport(url);
+    
+    // Object could not be resolved. E.G we don't have the files for the latest version
+    if (!leagueObject)
+    {
+      url = transformURL(objectJSONUrl, ddragonURL, latestApiVersion);
+      https.makeAnHTTPSCall(url).then(function(data) {
+        resolve(data);
+      }).catch(reject);
+    } else {
+      resolve(leagueObject);
+    }
+  });
 }
 
 /**
