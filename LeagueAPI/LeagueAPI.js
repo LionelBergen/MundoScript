@@ -40,7 +40,7 @@ const GET_FEATURED_GAMES_URL = 'https://%region%.api.riotgames.com/lol/spectator
 const GET_SUMMONER_BY_NAME_URL = 'https://%region%.api.riotgames.com/lol/summoner/v4/summoners/by-name/%name%?api_key=%apikey%';
 
 // THIRD_PARTY_CODE-V4
-const GET_THIRD_PARTY_CODE_URL = 'https://%region%.api.riotgames.com/lol/platform/v4/third-party-code/by-summoner/%summonerid%?api_key=%apikey';
+const GET_THIRD_PARTY_CODE_URL = 'https://%region%.api.riotgames.com/lol/platform/v4/third-party-code/by-summoner/%summonerid%?api_key=%apikey%';
 
 // TOURNAMENT-STUB-V4
 // TOURNAMENT-V4
