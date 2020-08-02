@@ -464,7 +464,7 @@ function replaceObjectFoundByKeyRunes(obj)
 
 		if (key === 'perkIds')
 		{
-			obj[key] = fullPerks.getByPerkIds(obj[key]);
+			obj[key] = fullPerks.getByKey(obj[key]);
 			renamePropertyOnObject(obj, 'perkIds', 'perkObjects');
     }
 		else if (key == 'perkStyle' || key == 'perkSubStyle')

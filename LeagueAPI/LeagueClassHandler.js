@@ -57,7 +57,6 @@ function createFindByFunction(keyNameToFindBy)
 	return function(key)
 	{
     const objs = Object.values(this);
-    
     if (Array.isArray(key))
     {
       const foundObjects = [];
@@ -80,6 +79,11 @@ function findBy(propertyArray, keyNameToFindBy, keyToFind)
 	for (var i=0; i<propertyArray.length; i++)
 	{
 		foundSummonerObj = Object.values(propertyArray[i]).find(c => {return c[keyNameToFindBy] == keyToFind});
+    // perks work differently
+    if (!foundSummonerObj && propertyArray[i][keyNameToFindBy] == keyToFind) {
+      foundSummonerObj = propertyArray[i];
+    }
+    
 		if (foundSummonerObj)
 		{
 			break;
