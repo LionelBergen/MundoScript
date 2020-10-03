@@ -4,7 +4,8 @@
   "description": "League API Wrapper. Easy to use wrapper for the League Of Legends API",
   "main": "LeagueAPI/LeagueAPI.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"eslint": "eslint --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,9 @@
     "url": "https://github.com/LionelBergen/LeagueAPIWrapper/issues"
   },
   "homepage": "https://github.com/LionelBergen/LeagueAPIWrapper#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-strongloop": "^2.1.0"
+  }
 }
