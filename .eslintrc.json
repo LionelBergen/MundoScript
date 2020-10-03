@@ -9,5 +9,13 @@
 		"browser": false,
         "node": true,
 		"es6": true
-    }
+    },
+	
+	"rules": {
+		"indent": ["error", 4],
+		"linebreak-style": ["error", "unix"],
+		"semi": ["error", "always"],
+		"comma-dangle": ["error", "always"],
+		"no-undef": 1
+	}
 }
