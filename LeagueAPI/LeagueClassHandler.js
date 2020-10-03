@@ -10,19 +10,19 @@ const runesJsonURI = '%url%/%apiversion%/data/en_US/runesReforged.json';
 const profileIconURI = '%url%/%apiversion%/data/en_US/profileicon.json';
 
 // There is no official endpoint for the stat modifiers.
-const unofficalPerkURI = 'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perks.json'
+const unofficalPerkURI = 'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perks.json';
 const localPerkURI = '%url%/%apiversion%/data/en_US/perksFull.json';
 
 module.exports = function getClassesDataFromJSON()
 {
-	return new Promise(function(resolve, reject)
-	{
-		getLatestApiVersion().then(function(latestApiVersion) {
-			const mapPromise = getLeagueObject(latestApiVersion, mapJsonURI);
-			const summonerPromise = getLeagueObject(latestApiVersion, summonerJsonURI);
-			const championPromise = getLeagueObject(latestApiVersion, championJsonURI);
-			const runesPerksPromise = getLeagueObject(latestApiVersion, runesJsonURI);
-			const fullPerkPromise = getLeagueFullPerksObject(latestApiVersion);
+  return new Promise(function(resolve, reject)
+  {
+    getLatestApiVersion().then(function(latestApiVersion) {
+      const mapPromise = getLeagueObject(latestApiVersion, mapJsonURI);
+      const summonerPromise = getLeagueObject(latestApiVersion, summonerJsonURI);
+      const championPromise = getLeagueObject(latestApiVersion, championJsonURI);
+      const runesPerksPromise = getLeagueObject(latestApiVersion, runesJsonURI);
+      const fullPerkPromise = getLeagueFullPerksObject(latestApiVersion);
       const profileIconPromise = getLeagueObject(latestApiVersion, profileIconURI);
 
       Promise.all([mapPromise, summonerPromise, championPromise, runesPerksPromise, fullPerkPromise, profileIconPromise]).then(function(data) {
@@ -35,9 +35,9 @@ module.exports = function getClassesDataFromJSON()
 
         mapObj.getByKey = createFindByFunction('MapId');
         summonerObj.getByKey = createFindByFunction('key');
-			  championObj.getByKey = createFindByFunction('key');
-        runesPerksObj.getByKey = function(idValue) { let objs = Object.values(this); return Object.values(objs).find(c => {return c['id'] == idValue});	}
-			  fullPerkObj.getByKey = createFindByFunction('id');
+        championObj.getByKey = createFindByFunction('key');
+        runesPerksObj.getByKey = function(idValue) { let objs = Object.values(this); return Object.values(objs).find(c => {return c['id'] == idValue;});	};
+        fullPerkObj.getByKey = createFindByFunction('id');
         profileIconObj.getByKey = function(id) { return profileIconObj[id]; };
 
         const teamObj = {'200': 'red', '100': 'blue'};
@@ -46,16 +46,16 @@ module.exports = function getClassesDataFromJSON()
         resolve({'map': mapObj, 'summoner': summonerObj, 'champion': championObj, 'team': teamObj,
           'profileIcon' : profileIconObj, 'runes': runesPerksObj, 'fullPerks': fullPerkObj});
       });
-		})
-		.catch(reject);
-	});
+    })
+      .catch(reject);
+  });
 };
 
 // TODO: Faster way would be to keep an Array, and get by the index instead of invoking Object.values() every time.
 function createFindByFunction(keyNameToFindBy)
 {
-	return function(key)
-	{
+  return function(key)
+  {
     const objs = Object.values(this);
     if (Array.isArray(key))
     {
@@ -70,33 +70,33 @@ function createFindByFunction(keyNameToFindBy)
     }
     
     return findBy(objs, keyNameToFindBy, key);
-  }
+  };
 }
 
 function findBy(propertyArray, keyNameToFindBy, keyToFind)
 {
-	let foundSummonerObj;
-	for (var i=0; i<propertyArray.length; i++)
-	{
-		foundSummonerObj = Object.values(propertyArray[i]).find(c => {return c[keyNameToFindBy] == keyToFind});
+  let foundSummonerObj;
+  for (var i=0; i<propertyArray.length; i++)
+  {
+    foundSummonerObj = Object.values(propertyArray[i]).find(c => {return c[keyNameToFindBy] == keyToFind;});
     // perks work differently
     if (!foundSummonerObj && propertyArray[i][keyNameToFindBy] == keyToFind) {
       foundSummonerObj = propertyArray[i];
     }
     
-		if (foundSummonerObj)
-		{
-			break;
-		}
-	}
+    if (foundSummonerObj)
+    {
+      break;
+    }
+  }
   
-	return foundSummonerObj;
+  return foundSummonerObj;
 }
 
 // Full perk information is special since there is no official API for it.
 function getLeagueFullPerksObject(latestApiVersion)
 {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function(resolve) {
     let url = transformURL(localPerkURI, localURL, latestApiVersion);
     let leagueObject = tryToResolveImport(url);
     
@@ -139,13 +139,13 @@ function getLeagueObject(latestApiVersion, objectJSONUrl)
 */
 function getLatestApiVersion()
 {
-	return new Promise(function(resolve, reject) {
-		https.makeAnHTTPSCall(GET_VERSION_URL)
-		.then(function(data) {
-			resolve(data[0]);
-		})
-		.catch(reject);
-	});
+  return new Promise(function(resolve, reject) {
+    https.makeAnHTTPSCall(GET_VERSION_URL)
+      .then(function(data) {
+        resolve(data[0]);
+      })
+      .catch(reject);
+  });
 }
 
 /**
@@ -153,7 +153,7 @@ function getLatestApiVersion()
 */
 function transformURL(url, prefixURL, apiVersion)
 {
-	return url.replace('%url%', prefixURL).replace('%apiversion%', apiVersion);
+  return url.replace('%url%', prefixURL).replace('%apiversion%', apiVersion);
 }
 
 /**
@@ -161,23 +161,23 @@ function transformURL(url, prefixURL, apiVersion)
 */
 function tryToResolveImport(importUrl)
 {
-	let result;
+  let result;
 	
-	try 
-	{
-		result = require(importUrl);
-	}
-	catch (e) 
-	{
-		if (e instanceof Error && e.code === "MODULE_NOT_FOUND")
-		{
-			console.log("WARNING: Cannot load import: " + importUrl);
-		}
-		else
-		{
-			throw e;
-		}
-	}
+  try 
+  {
+    result = require(importUrl);
+  }
+  catch (e) 
+  {
+    if (e instanceof Error && e.code === "MODULE_NOT_FOUND")
+    {
+      console.log("WARNING: Cannot load import: " + importUrl);
+    }
+    else
+    {
+      throw e;
+    }
+  }
 	
-	return result;
+  return result;
 }
