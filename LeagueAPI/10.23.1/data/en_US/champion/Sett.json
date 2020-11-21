@@ -1,0 +1,2134 @@
+{
+  "type": "champion",
+  "format": "standAloneComplex",
+  "version": "10.23.1",
+  "data": {
+    "Sett": {
+      "id": "Sett",
+      "key": "875",
+      "name": "Sett",
+      "title": "the Boss",
+      "image": {
+        "full": "Sett.png",
+        "sprite": "champion3.png",
+        "group": "champion",
+        "x": 192,
+        "y": 48,
+        "w": 48,
+        "h": 48
+      },
+      "skins": [
+        {
+          "id": "875000",
+          "num": 0,
+          "name": "default",
+          "chromas": false
+        },
+        {
+          "id": "875001",
+          "num": 1,
+          "name": "Mecha Kingdoms Sett",
+          "chromas": true
+        },
+        {
+          "id": "875008",
+          "num": 8,
+          "name": "Obsidian Dragon Sett",
+          "chromas": false
+        },
+        {
+          "id": "875009",
+          "num": 9,
+          "name": "Obsidian Dragon Sett Prestige Edition",
+          "chromas": false
+        }
+      ],
+      "lore": "A leader of Ionia's growing criminal underworld, Sett rose to prominence in the wake of the war with Noxus. Though he began as a humble challenger in the fighting pits of Navori, he quickly gained notoriety for his savage strength, and his ability to take seemingly endless amounts of punishment. Now, having climbed through the ranks of local combatants, Sett has muscled to the top, reigning over the pits he once fought in.",
+      "blurb": "A leader of Ionia's growing criminal underworld, Sett rose to prominence in the wake of the war with Noxus. Though he began as a humble challenger in the fighting pits of Navori, he quickly gained notoriety for his savage strength, and his ability to...",
+      "allytips": [],
+      "enemytips": [],
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
+      "partype": "Grit",
+      "info": {
+        "attack": 8,
+        "defense": 5,
+        "magic": 1,
+        "difficulty": 2
+      },
+      "stats": {
+        "hp": 600.0,
+        "hpperlevel": 93.0,
+        "mp": 0.0,
+        "mpperlevel": 0,
+        "movespeed": 340.0,
+        "armor": 33.0,
+        "armorperlevel": 4.0,
+        "spellblock": 32.0,
+        "spellblockperlevel": 1.25,
+        "attackrange": 125.0,
+        "hpregen": 7.0,
+        "hpregenperlevel": 0.5,
+        "mpregen": 0.0,
+        "mpregenperlevel": 0,
+        "crit": 0,
+        "critperlevel": 0,
+        "critdamage": 1.75,
+        "attackdamage": 60.0,
+        "attackdamageperlevel": 4.0,
+        "attackspeedperlevel": 1.75,
+        "attackspeed": 0.625,
+        "attackspeedratio": 0.625
+      },
+      "spells": [
+        {
+          "id": "SettQ",
+          "name": "Knuckle Down",
+          "description": "Sett's next two attacks deal additional damage based off of the target's max health. Sett also gains movement speed while moving towards enemy champions.",
+          "tooltip": "Sett itches for a fight, gaining {{ msamount*100 }}% movement speed for {{ msduration }} seconds while moving towards enemy champions.<br /><br />Sett's next two basic attacks deal {{ basedamage }} bonus physical damage, plus <scaleAD>{{ maxhealthdamagecalc }}</scaleAD> of the target's maximum health [{{ enemymaxhealthdamage*100 }}% + {{ bonusenemymaxhealthdamage }} per 100 attack damage].<br /><br /><rules>Against monsters the damage is capped at 400 per punch.</rules>",
+          "leveltip": {
+            "label": [
+              "Cooldown",
+              "Base Damage",
+              "% Max Health Per 100 AD"
+            ],
+            "effect": [
+              "{{ cooldown }} -> {{ cooldownNL }}",
+              "{{ basedamage }} -> {{ basedamageNL }}",
+              "{{ maxhealthtadratiotooltip }}% -> {{ maxhealthtadratiotooltipNL }}%"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            9.0,
+            8.0,
+            7.0,
+            6.0,
+            5.0
+          ],
+          "cooldownBurn": "9/8/7/6/5",
+          "cost": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "costBurn": "0",
+          "datavalues": {
+            "duration": [
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0
+            ],
+            "basedamage": [
+              10.0,
+              20.0,
+              30.0,
+              40.0,
+              50.0
+            ],
+            "stackcount": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "healthcost": [
+              0.1,
+              0.1,
+              0.1,
+              0.1,
+              0.1
+            ],
+            "msamount": [
+              0.3,
+              0.3,
+              0.3,
+              0.3,
+              0.3
+            ],
+            "msduration": [
+              1.5,
+              1.5,
+              1.5,
+              1.5,
+              1.5
+            ],
+            "adrenalinedecaylocktimer": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "basehealthcost": [
+              20.0,
+              20.0,
+              20.0,
+              20.0,
+              20.0
+            ],
+            "adratio": [
+              1.2,
+              1.2,
+              1.2,
+              1.2,
+              1.2
+            ],
+            "enemymaxhealthdamage": [
+              0.01,
+              0.01,
+              0.01,
+              0.01,
+              0.01
+            ],
+            "qminimumdamage": [
+              10.0,
+              15.0,
+              20.0,
+              25.0,
+              30.0
+            ],
+            "maxhealthtadratio": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "maxhealthtadratiotooltip": [
+              1.0,
+              1.5,
+              2.0,
+              2.5,
+              3.0
+            ]
+          },
+          "calculations": {
+            "maxhealthdamagecalc": {
+              "formula": [
+                {
+                  "datavalue": "enemymaxhealthdamage"
+                },
+                {
+                  "datavalue": "maxhealthtadratio",
+                  "stat": "attackdamage"
+                }
+              ]
+            },
+            "bonusenemymaxhealthdamage": {
+              "formula": []
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": "No Cost",
+          "maxammo": "-1",
+          "range": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rangeBurn": "0",
+          "image": {
+            "full": "SettQ.png",
+            "sprite": "spell10.png",
+            "group": "spell",
+            "x": 96,
+            "y": 96,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "No Cost"
+        },
+        {
+          "id": "SettW",
+          "name": "Haymaker",
+          "description": "Sett passively stores damage he takes as Grit. On cast, Sett expends all stored Grit to gain a shield and punch an area, dealing true damage in the center and physical damage on the sides.",
+          "tooltip": "<span class=\"colorFFAA00\">Passive:</span> Sett stores {{ damagestored*100 }}% of damage taken as <span class=\"colorF1C40F\">Grit</span>, to a cap of <unique>{{ maxgrit }}</unique> ({{ storedhealth*100 }}% of Sett's max health). <span class=\"colorF1C40F\">Grit</span> decays quickly {{ adrenalinestoragewindow }} seconds after the damage was taken.<br /><br /><span class=\"colorFFAA00\">Active:</span> Sett winds up a giant punch in a direction, expending all <span class=\"colorF1C40F\">Grit</span> to deal {{ damagecalc }} (<scaleAD>+{{ damageconversion }}</scaleAD> of expended <span class=\"colorF1C40F\">Grit</span>) as true damage to all enemies in the center line. Enemies not in the center line take physical damage instead.<br /><br /><span class=\"colorF50F00\">Maximum Damage: {{ f1 }}</span><br /><br />Sett also gains a rapidly decaying shield equal to <span class=\"colorF1C40F\">Grit</span> expended for {{ shieldmaxduration }} seconds.",
+          "leveltip": {
+            "label": [
+              "Cooldown",
+              "Base Damage"
+            ],
+            "effect": [
+              "{{ cooldown }} -> {{ cooldownNL }}",
+              "{{ basedamage }} -> {{ basedamageNL }}"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            18.0,
+            16.5,
+            15.0,
+            13.5,
+            12.0
+          ],
+          "cooldownBurn": "18/16.5/15/13.5/12",
+          "cost": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "costBurn": "0",
+          "datavalues": {
+            "basedamage": [
+              80.0,
+              100.0,
+              120.0,
+              140.0,
+              160.0
+            ],
+            "damageamp": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "duration": [
+              0.75,
+              0.75,
+              0.75,
+              0.75,
+              0.75
+            ],
+            "movementspeed": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "msduration": [
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0
+            ],
+            "greyhealthduration": [
+              3.0,
+              3.0,
+              3.0,
+              3.0,
+              3.0
+            ],
+            "shieldconversion": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "damagestored": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "storedhealth": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "locktime": [
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0
+            ],
+            "resourcedecayrate": [
+              0.3,
+              0.3,
+              0.3,
+              0.3,
+              0.3
+            ],
+            "damageconversionbase": [
+              0.25,
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            "enrageduration": [
+              6.0,
+              6.0,
+              6.0,
+              6.0,
+              6.0
+            ],
+            "enragehealingmult": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "enrageadmult": [
+              0.1,
+              0.1,
+              0.1,
+              0.1,
+              0.1
+            ],
+            "enragearmorpen": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "shieldmaxduration": [
+              3.0,
+              3.0,
+              3.0,
+              3.0,
+              3.0
+            ],
+            "shielddecaydelay": [
+              0.75,
+              0.75,
+              0.75,
+              0.75,
+              0.75
+            ],
+            "adrenalinestoragewindow": [
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0
+            ]
+          },
+          "calculations": {
+            "damagecalc": {
+              "formula": [
+                {
+                  "datavalue": "basedamage"
+                }
+              ]
+            },
+            "damageconversion": {
+              "formula": [
+                {
+                  "datavalue": "damageconversionbase"
+                }
+              ]
+            },
+            "maxgrit": {
+              "formula": [
+                {
+                  "stat": "maximumhealth",
+                  "coefficient": 0.5
+                }
+              ]
+            },
+            "maxdamage": {
+              "modifiedCalculation": "maxgrit",
+              "multiplier": {
+                "subparts": [
+                  {
+                    "datavalue": "damageconversionbase"
+                  },
+                  {
+                    "stat": "attackdamage",
+                    "statType": "bonus",
+                    "coefficient": 0.1
+                  }
+                ]
+              }
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": "No Cost",
+          "maxammo": "-1",
+          "range": [
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0
+          ],
+          "rangeBurn": "25000",
+          "image": {
+            "full": "SettW.png",
+            "sprite": "spell10.png",
+            "group": "spell",
+            "x": 192,
+            "y": 96,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "No Cost"
+        },
+        {
+          "id": "SettE",
+          "name": "Facebreaker",
+          "description": "Sett pulls in all enemies on opposite sides of him, dealing damage and stunning them. If enemies were only on one side, they are slowed instead of stunned.",
+          "tooltip": "Sett smashes enemies on either side of him into each other, dealing {{ basedamage }} <scaleAD>(+{{ tooltipadratio_e }})</scaleAD> physical damage and slowing them by {{ slowamount*100 }}% for {{ slowduration }} seconds. If Sett grabbed at least one enemy on each side, all enemies are stunned for {{ stunduration }} second.",
+          "leveltip": {
+            "label": [
+              "Cooldown",
+              "Base Damage"
+            ],
+            "effect": [
+              "{{ cooldown }} -> {{ cooldownNL }}",
+              "{{ basedamage }} -> {{ basedamageNL }}"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            16.0,
+            14.5,
+            13.0,
+            11.5,
+            10.0
+          ],
+          "cooldownBurn": "16/14.5/13/11.5/10",
+          "cost": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "costBurn": "0",
+          "datavalues": {
+            "duration": [
+              0.25,
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            "leapdistance": [
+              250.0,
+              250.0,
+              250.0,
+              250.0,
+              250.0
+            ],
+            "basedamage": [
+              50.0,
+              70.0,
+              90.0,
+              110.0,
+              130.0
+            ],
+            "maxhealthdamage": [
+              0.1,
+              0.1,
+              0.1,
+              0.1,
+              0.1
+            ],
+            "slowamount": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "slowduration": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "throwrange": [
+              500.0,
+              500.0,
+              500.0,
+              500.0,
+              500.0
+            ],
+            "singlebasedamage": [
+              10.0,
+              20.0,
+              30.0,
+              40.0,
+              50.0
+            ],
+            "stunduration": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "calculations": {
+            "damagecalc": {
+              "formula": [
+                {
+                  "datavalue": "basedamage"
+                },
+                {
+                  "stat": "attackdamage",
+                  "coefficient": 0.6
+                }
+              ]
+            },
+            "tooltipadratio_e": {
+              "formula": [
+                {
+                  "stat": "attackdamage",
+                  "coefficient": 0.6
+                }
+              ]
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": "No Cost",
+          "maxammo": "-1",
+          "range": [
+            490.0,
+            490.0,
+            490.0,
+            490.0,
+            490.0
+          ],
+          "rangeBurn": "490",
+          "image": {
+            "full": "SettE.png",
+            "sprite": "spell10.png",
+            "group": "spell",
+            "x": 48,
+            "y": 96,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "No Cost"
+        },
+        {
+          "id": "SettR",
+          "name": "The Show Stopper",
+          "description": "Sett carries an enemy champion through the air and slams them into the ground, dealing damage and slowing all enemies near where they land.",
+          "tooltip": "Sett grabs an enemy champion, carries them forward, then slams them into the ground. All enemies near the impact take {{ basedamage }} <scaleAD>(+{{ tooltipadratio_r }})</scaleAD> (+{{ maxhealthdamagecalc }} of the grabbed enemy's bonus health) physical damage and are slowed by {{ slowamount*100 }}% for {{ slowduration }} second. Enemies take less damage the further they are from where Sett lands.",
+          "leveltip": {
+            "label": [
+              "Cooldown",
+              "Bonus Health Damage",
+              "Base Damage"
+            ],
+            "effect": [
+              "{{ cooldown }} -> {{ cooldownNL }}",
+              "{{ maxhealthdamage*100.000000 }}% -> {{ maxhealthdamagenl*100.000000 }}%",
+              "{{ basedamage }} -> {{ basedamageNL }}"
+            ]
+          },
+          "maxrank": 3,
+          "cooldown": [
+            120.0,
+            100.0,
+            80.0
+          ],
+          "cooldownBurn": "120/100/80",
+          "cost": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "costBurn": "0",
+          "datavalues": {
+            "grabduration": [
+              1.5,
+              1.5,
+              1.5
+            ],
+            "movespeedbonus": [
+              800.0,
+              800.0,
+              800.0
+            ],
+            "maxhealthdamage": [
+              0.4,
+              0.5,
+              0.6
+            ],
+            "basedamage": [
+              200.0,
+              300.0,
+              400.0
+            ],
+            "distancetofirsthit": [
+              400.0,
+              400.0,
+              400.0
+            ],
+            "distancepastfirsthit": [
+              600.0,
+              600.0,
+              600.0
+            ],
+            "maxpassivestacks": [
+              4.0,
+              4.0,
+              4.0
+            ],
+            "delaybeforedecay": [
+              3.0,
+              3.0,
+              3.0
+            ],
+            "carrydistanceperstack": [
+              200.0,
+              200.0,
+              200.0
+            ],
+            "resistduration": [
+              6.0,
+              6.0,
+              6.0
+            ],
+            "slowamount": [
+              0.99,
+              0.99,
+              0.99
+            ],
+            "slowduration": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "craterduration": [
+              10.0,
+              10.0,
+              10.0
+            ],
+            "craterradius": [
+              600.0,
+              600.0,
+              600.0
+            ],
+            "cratermaxhaste": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "cratermaxslow": [
+              0.99,
+              0.99,
+              0.99
+            ],
+            "crateredgedamagereduction": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "cratersweetspotradius": [
+              125.0,
+              125.0,
+              125.0
+            ]
+          },
+          "calculations": {
+            "damagecalc": {
+              "formula": [
+                {
+                  "datavalue": "basedamage"
+                },
+                {
+                  "stat": "attackdamage",
+                  "statType": "bonus",
+                  "coefficient": 1.0
+                }
+              ]
+            },
+            "maxhealthdamagecalc": {
+              "formula": [
+                {
+                  "datavalue": "maxhealthdamage"
+                }
+              ]
+            },
+            "tooltipadratio_r": {
+              "formula": [
+                {
+                  "stat": "attackdamage",
+                  "statType": "bonus",
+                  "coefficient": 1.0
+                }
+              ]
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": "No Cost",
+          "maxammo": "-1",
+          "range": [
+            400.0,
+            400.0,
+            400.0
+          ],
+          "rangeBurn": "400",
+          "image": {
+            "full": "SettR.png",
+            "sprite": "spell10.png",
+            "group": "spell",
+            "x": 144,
+            "y": 96,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "No Cost"
+        }
+      ],
+      "passive": {
+        "id": "SettPassive",
+        "name": "Pit Grit",
+        "description": "Sett's basic attacks alternate between left and right punch. Right punch is slightly stronger and faster. Sett also hates losing, gaining additional health regeneration based off of his missing health.",
+        "tooltip": "<span class=\"colorFFAA00\">Heavy Hands:</span> Sett's basic attacks alternate between a <span class=\"colorCCCF00\">Left Punch</span> and a <span class=\"color8B0000\">Right Punch</span>, always opening with a <span class=\"colorCCCF00\">Left Punch</span>. Attack speed increases the speed of both punches.<br /><li><span class=\"colorCCCF00\">Left Punches</span> deal normal damage.<li><span class=\"color8B0000\">Right Punches</span> come out faster and deal {{ rightpunchbonus }} bonus damage.<br /><br /><span class=\"colorFFAA00\">Heart of the Half-Beast:</span> Sett gains {{ tooltipregenpermissinghealthcalc }} additional health regeneration for each {{ missinghealthunit*500 }}% missing health.",
+        "image": {
+          "full": "Sett_P.Sett.png",
+          "sprite": "passive3.png",
+          "group": "passive",
+          "x": 288,
+          "y": 48,
+          "w": 48,
+          "h": 48
+        },
+        "datavalues": {
+          "numhits": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "lockouttimer": [
+            10.0,
+            10.0,
+            10.0
+          ],
+          "markerduration": [
+            3.0,
+            3.0,
+            3.0
+          ],
+          "grabduration": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "selfslowpercent": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "maxhponhit": [
+            0.06,
+            0.06,
+            0.06
+          ],
+          "missinghealthunit": [
+            0.01,
+            0.01,
+            0.01
+          ],
+          "attackspeed": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "jabdamagepercent": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "hookdamagepercentfinal": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "passivehealththreshold": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "passivehealththresholdamp": [
+            0.02,
+            0.02,
+            0.02
+          ]
+        },
+        "calculations": {
+          "healingcalc": {
+            "formula": []
+          },
+          "rightpunchbonus": {
+            "formula": [
+              {
+                "stat": "attackdamage",
+                "statType": "bonus",
+                "coefficient": 0.5
+              }
+            ]
+          },
+          "{7733e08c}": {
+            "formula": [
+              {
+                "level": [
+                  5.0,
+                  5.0,
+                  5.0,
+                  5.0,
+                  5.0,
+                  10.0,
+                  10.0,
+                  10.0,
+                  10.0,
+                  10.0,
+                  20.0,
+                  20.0,
+                  20.0,
+                  20.0,
+                  20.0,
+                  40.0,
+                  40.0,
+                  40.0
+                ]
+              }
+            ],
+            "multiplier": {
+              "number": 0.01
+            }
+          },
+          "{a156fbdc}": {
+            "formula": [
+              {
+                "level": [
+                  1.2,
+                  1.2,
+                  1.2,
+                  1.2,
+                  1.2,
+                  1.3,
+                  1.3,
+                  1.3,
+                  1.3,
+                  1.3,
+                  1.4,
+                  1.4,
+                  1.4,
+                  1.4,
+                  1.4,
+                  1.5,
+                  1.5,
+                  1.5
+                ]
+              }
+            ]
+          },
+          "tooltipregenpermissinghealthcalc": {
+            "modifiedCalculation": "{7733e08c}",
+            "multiplier": {
+              "number": 5.0
+            }
+          }
+        }
+      },
+      "recommended": [
+        {
+          "champion": "Sett",
+          "title": "SettARAM",
+          "map": "HA",
+          "mode": "ARAM",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1055",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3067",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3057",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3078",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3053",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3153",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3026",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3071",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3742",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Sett",
+          "title": "SettFIRSTBLOOD",
+          "map": "HA",
+          "mode": "FIRSTBLOOD",
+          "type": "riot",
+          "customTag": "",
+          "extensionPage": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "items": [
+                {
+                  "id": "1055",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "startingjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "1041",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2031",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "items": [
+                {
+                  "id": "3111",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3071",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essentialjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "1401",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3111",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3071",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "offensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3053",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3748",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3078",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3742",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3143",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3065",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2043",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2138",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Sett",
+          "title": "SettKINGPORO",
+          "map": "HA",
+          "mode": "KINGPORO",
+          "type": "riot",
+          "customTag": "",
+          "extensionPage": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "KingPoroSnax",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3680",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3681",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3682",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3683",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "2051",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 3,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3071",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3111",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3053",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "offensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3812",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3748",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3156",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3065",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3742",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3143",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2033",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Sett",
+          "title": "SettSL",
+          "map": "NB",
+          "mode": "NEXUSBLITZ",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4202",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "startingjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4101",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3111",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3071",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3053",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essentialjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4102",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3111",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3071",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3053",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "offensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3812",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3161",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3026",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3742",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3065",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3005",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2138",
+                  "count": 1,
+                  "hideCount": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Sett",
+          "title": "SettSR",
+          "map": "SR",
+          "mode": "CLASSIC",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1055",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3067",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3057",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3078",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3053",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3153",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3026",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3071",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3742",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2097 @@
+{
+  "type": "champion",
+  "format": "standAloneComplex",
+  "version": "10.23.1",
+  "data": {
+    "Mordekaiser": {
+      "id": "Mordekaiser",
+      "key": "82",
+      "name": "Mordekaiser",
+      "title": "the Iron Revenant",
+      "image": {
+        "full": "Mordekaiser.png",
+        "sprite": "champion2.png",
+        "group": "champion",
+        "x": 240,
+        "y": 48,
+        "w": 48,
+        "h": 48
+      },
+      "skins": [
+        {
+          "id": "82000",
+          "num": 0,
+          "name": "default",
+          "chromas": false
+        },
+        {
+          "id": "82001",
+          "num": 1,
+          "name": "Dragon Knight Mordekaiser",
+          "chromas": false
+        },
+        {
+          "id": "82002",
+          "num": 2,
+          "name": "Infernal Mordekaiser",
+          "chromas": false
+        },
+        {
+          "id": "82003",
+          "num": 3,
+          "name": "Pentakill Mordekaiser",
+          "chromas": false
+        },
+        {
+          "id": "82004",
+          "num": 4,
+          "name": "Lord Mordekaiser",
+          "chromas": false
+        },
+        {
+          "id": "82005",
+          "num": 5,
+          "name": "King of Clubs Mordekaiser",
+          "chromas": false
+        },
+        {
+          "id": "82006",
+          "num": 6,
+          "name": "Dark Star Mordekaiser",
+          "chromas": true
+        }
+      ],
+      "lore": "Twice slain and thrice born, Mordekaiser is a brutal warlord from a foregone epoch who uses his necromantic sorcery to bind souls into an eternity of servitude. Few now remain who remember his earlier conquests, or know the true extent of his powers\u2014but there are some ancient souls that do, and they fear the day when he may return to claim dominion over both the living and the dead.",
+      "blurb": "Twice slain and thrice born, Mordekaiser is a brutal warlord from a foregone epoch who uses his necromantic sorcery to bind souls into an eternity of servitude. Few now remain who remember his earlier conquests, or know the true extent of his powers\u2014but...",
+      "allytips": [
+        "Offense is your defense. Keep fighting to build up larger Indestructible shields.",
+        "Hitting multiple champions with the same ability can help quickly activate Darkness Rise.",
+        "Use Realm of Death on a low health enemy to guarantee the kill and keep their stats for the rest of a teamfight."
+      ],
+      "enemytips": [
+        "Mordekaiser builds up a powerful damage aura when fighting champions, so keep your distance.",
+        "Damage he deals can be converted into a large shield, and consumed for health",
+        "Realm of Death will cut you off from your teammates completely. Try to save mobility spells to escape Mordekaiser once inside"
+      ],
+      "tags": [
+        "Fighter"
+      ],
+      "partype": "Shield",
+      "info": {
+        "attack": 4,
+        "defense": 6,
+        "magic": 7,
+        "difficulty": 4
+      },
+      "stats": {
+        "hp": 575.0,
+        "hpperlevel": 90.0,
+        "mp": 0,
+        "mpperlevel": 0,
+        "movespeed": 335.0,
+        "armor": 37.0,
+        "armorperlevel": 3.0,
+        "spellblock": 32.0,
+        "spellblockperlevel": 1.25,
+        "attackrange": 175.0,
+        "hpregen": 0,
+        "hpregenperlevel": 0.75,
+        "mpregen": 0.0,
+        "mpregenperlevel": 0,
+        "crit": 0,
+        "critperlevel": 0,
+        "critdamage": 1.75,
+        "attackdamage": 61.0,
+        "attackdamageperlevel": 4.0,
+        "attackspeedperlevel": 1.0,
+        "attackspeed": 0.625,
+        "attackspeedratio": 0.625
+      },
+      "spells": [
+        {
+          "id": "MordekaiserQ",
+          "name": "Obliterate",
+          "description": "Mordekaiser smashes the ground with his mace dealing damage to each enemy struck. Damage is increased when hitting a single enemy.",
+          "tooltip": "Mordekaiser smashes the ground with Nightfall dealing <magicDamage>{{ qdamage }} magic damage</magicDamage>, increased to <magicDamage>{{ empowereddamagetooltip }}</magicDamage> if it hits only a single enemy.",
+          "leveltip": {
+            "label": [
+              "Isolation Damage",
+              "Damage",
+              "Cooldown"
+            ],
+            "effect": [
+              "{{ isolationscalar*100.000000 }}% -> {{ isolationscalarnl*100.000000 }}%",
+              "{{ qbasedamage }} -> {{ qbasedamageNL }}",
+              "{{ cooldown }} -> {{ cooldownNL }}"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            9.0,
+            7.75,
+            6.5,
+            5.25,
+            4.0
+          ],
+          "cooldownBurn": "9/7.75/6.5/5.25/4",
+          "cost": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "costBurn": "0",
+          "datavalues": {
+            "qbasedamage": [
+              75.0,
+              95.0,
+              115.0,
+              135.0,
+              155.0
+            ],
+            "macestartdistance": [
+              400.0,
+              400.0,
+              400.0,
+              400.0,
+              400.0
+            ],
+            "macelength": [
+              625.0,
+              625.0,
+              625.0,
+              625.0,
+              625.0
+            ],
+            "rectanglewidth": [
+              160.0,
+              160.0,
+              160.0,
+              160.0,
+              160.0
+            ],
+            "isolationscalar": [
+              1.2,
+              1.25,
+              1.3,
+              1.35,
+              1.4
+            ],
+            "totaladratio": [
+              0.7,
+              0.75,
+              0.8,
+              0.85,
+              0.9
+            ],
+            "isolationtooltip": [
+              0.2,
+              0.25,
+              0.3,
+              0.35,
+              0.4
+            ]
+          },
+          "calculations": {
+            "qdamage": {
+              "formula": [
+                {
+                  "datavalue": "qbasedamage"
+                },
+                {
+                  "stat": "abilitypower",
+                  "coefficient": 0.6
+                },
+                {
+                  "level": [
+                    5.0,
+                    9.0,
+                    13.0,
+                    17.0,
+                    21.0,
+                    25.0,
+                    29.0,
+                    33.0,
+                    37.0,
+                    41.0,
+                    51.0,
+                    61.0,
+                    71.0,
+                    81.0,
+                    91.0,
+                    107.0,
+                    123.0,
+                    139.0
+                  ]
+                }
+              ]
+            },
+            "empowereddamagetooltip": {
+              "modifiedCalculation": "qdamage",
+              "multiplier": {
+                "datavalue": "isolationscalar"
+              }
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": "No Cost",
+          "maxammo": "-1",
+          "range": [
+            675.0,
+            675.0,
+            675.0,
+            675.0,
+            675.0
+          ],
+          "rangeBurn": "675",
+          "image": {
+            "full": "MordekaiserQ.png",
+            "sprite": "spell7.png",
+            "group": "spell",
+            "x": 240,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "No Cost"
+        },
+        {
+          "id": "MordekaiserW",
+          "name": "Indestructible",
+          "description": "Mordekaiser stores damage he deals and takes to create a shield. He may consume the shield to heal.",
+          "tooltip": "<passive>Passive:</passive> Mordekaiser stores {{ damageconversion*100 }}% of the damage he deals and {{ damagetakenconversion*100 }}% of the damage he takes.<br /><br /><active>Active:</active> Mordekaiser gains the stored damage as <shield>Shield</shield>. He may <recast>Recast</recast> this Ability to restore <healing>{{ healingpercent*100 }}% of the remaining Shield as Health</healing>.<br /><br />Minimum Shield: <shield>{{ minhealthtooltip }}</shield><br />Maximum Shield: <shield>{{ maxhealthtooltip }}</shield> <rules>Shield decays over time.<br />Damage stored from non-champion sources reduced by 75%.</rules>",
+          "leveltip": {
+            "label": [
+              "Healing Percent",
+              "Cooldown"
+            ],
+            "effect": [
+              "{{ healingpercent*100.000000 }}% -> {{ healingpercentnl*100.000000 }}%",
+              "{{ cooldown }} -> {{ cooldownNL }}"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            14.0,
+            13.0,
+            12.0,
+            11.0,
+            10.0
+          ],
+          "cooldownBurn": "14/13/12/11/10",
+          "cost": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "costBurn": "0",
+          "datavalues": {
+            "duration": [
+              5.0,
+              5.0,
+              5.0,
+              5.0,
+              5.0
+            ],
+            "damageconversion": [
+              0.35,
+              0.35,
+              0.35,
+              0.35,
+              0.35
+            ],
+            "baseshield": [
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05
+            ],
+            "healingpercent": [
+              0.4,
+              0.425,
+              0.45,
+              0.475,
+              0.5
+            ],
+            "minionpenalty": [
+              0.25,
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            "damagetakenconversion": [
+              0.15,
+              0.15,
+              0.15,
+              0.15,
+              0.15
+            ],
+            "maxhealthcap": [
+              0.3,
+              0.3,
+              0.3,
+              0.3,
+              0.3
+            ],
+            "timebeforedecay": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "decaypersecond": [
+              0.005,
+              0.005,
+              0.005,
+              0.005,
+              0.005
+            ]
+          },
+          "calculations": {
+            "healthdecay": {
+              "formula": [
+                {
+                  "datavalue": "decaypersecond",
+                  "stat": "maximumhealth",
+                  "statType": "bonus"
+                }
+              ]
+            },
+            "maxhealthtooltip": {
+              "formula": [
+                {
+                  "stat": "maximumhealth",
+                  "coefficient": 0.3
+                }
+              ]
+            },
+            "minhealthtooltip": {
+              "formula": [
+                {
+                  "stat": "maximumhealth",
+                  "coefficient": 0.05
+                }
+              ]
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": "No Cost",
+          "maxammo": "-1",
+          "range": [
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0,
+            25000.0
+          ],
+          "rangeBurn": "25000",
+          "image": {
+            "full": "MordekaiserW.png",
+            "sprite": "spell7.png",
+            "group": "spell",
+            "x": 336,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "No Cost"
+        },
+        {
+          "id": "MordekaiserE",
+          "name": "Death's Grasp",
+          "description": "Mordekaiser pulls all enemies in an area.",
+          "tooltip": "<spellPassive>Passive:</spellPassive> Mordekaiser gains {{ magicpen*100 }}% Magic Penetration.<br /><br /><spellActive>Active:</spellActive> Mordekaiser pulls enemies in his direction, dealing <magicDamage>{{ totaldamage }} magic damage.</magicDamage>",
+          "leveltip": {
+            "label": [
+              "Percent Magic Penetration",
+              "Damage",
+              "Cooldown"
+            ],
+            "effect": [
+              "{{ magicpen*100.000000 }}% -> {{ magicpennl*100.000000 }}%",
+              "{{ damage }} -> {{ damageNL }}",
+              "{{ cooldown }} -> {{ cooldownNL }}"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            24.0,
+            21.0,
+            18.0,
+            15.0,
+            12.0
+          ],
+          "cooldownBurn": "24/21/18/15/12",
+          "cost": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "costBurn": "0",
+          "datavalues": {
+            "damage": [
+              80.0,
+              95.0,
+              110.0,
+              125.0,
+              140.0
+            ],
+            "delaybeforemovement": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "maxdistance": [
+              550.0,
+              550.0,
+              550.0,
+              550.0,
+              550.0
+            ],
+            "knocktowardsdistance": [
+              250.0,
+              250.0,
+              250.0,
+              250.0,
+              250.0
+            ],
+            "standasiderange": [
+              900.0,
+              900.0,
+              900.0,
+              900.0,
+              900.0
+            ],
+            "magicpen": [
+              0.05,
+              0.075,
+              0.1,
+              0.125,
+              0.15
+            ]
+          },
+          "calculations": {
+            "totaldamage": {
+              "formula": [
+                {
+                  "datavalue": "damage"
+                },
+                {
+                  "stat": "abilitypower",
+                  "coefficient": 0.6
+                }
+              ]
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": "No Cost",
+          "maxammo": "-1",
+          "range": [
+            700.0,
+            700.0,
+            700.0,
+            700.0,
+            700.0
+          ],
+          "rangeBurn": "700",
+          "image": {
+            "full": "MordekaiserE.png",
+            "sprite": "spell7.png",
+            "group": "spell",
+            "x": 192,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "No Cost"
+        },
+        {
+          "id": "MordekaiserR",
+          "name": "Realm of Death",
+          "description": "Mordekaiser drags his victim to a different dimension with him and steals a portion of their stats. If he kills them, he keeps the stats until the victim respawns.",
+          "tooltip": "Mordekaiser banishes a champion to the Death Realm with him for {{ spiritrealmduration }}s, stealing {{ statstealpercentscalar*100 }}% of their core stats for the duration.<br /><br />If Mordekaiser kills that enemy in the Death Realm he consumes their soul, keeping the stats he stole until the target respawns. <rules>Core stats stolen include: <magicDamage>Ability Power</magicDamage>, <physicalDamage>Attack Damage</physicalDamage>, <attackSpeed>Attack Speed</attackSpeed>, <scaleArmor>Armor</scaleArmor>, <scaleMR>Magic Resist</scaleMR>, and <healing>Maximum Health</healing>.</rules>",
+          "leveltip": {
+            "label": [
+              "Cooldown"
+            ],
+            "effect": [
+              "{{ cooldown }} -> {{ cooldownNL }}"
+            ]
+          },
+          "maxrank": 3,
+          "cooldown": [
+            140.0,
+            120.0,
+            100.0
+          ],
+          "cooldownBurn": "140/120/100",
+          "cost": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "costBurn": "0",
+          "datavalues": {
+            "spiritrealmduration": [
+              7.0,
+              7.0,
+              7.0
+            ],
+            "statstealpercentscalar": [
+              0.1,
+              0.1,
+              0.1
+            ],
+            "zoneradius": [
+              1200.0,
+              1200.0,
+              1200.0
+            ],
+            "ghostapratio": [
+              0.6,
+              0.6,
+              0.6
+            ]
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": "No Cost",
+          "maxammo": "-1",
+          "range": [
+            650.0,
+            650.0,
+            650.0
+          ],
+          "rangeBurn": "650",
+          "image": {
+            "full": "MordekaiserR.png",
+            "sprite": "spell7.png",
+            "group": "spell",
+            "x": 288,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "No Cost"
+        }
+      ],
+      "passive": {
+        "id": "MordekaiserPassive",
+        "name": "Darkness Rise",
+        "description": "Mordekaiser gains a powerful damage aura and movement speed after landing 3 attacks or spells against champions.",
+        "tooltip": "Mordekaiser cloaks himself in negative energy after hitting 3 basic Abilities or Attacks against champions or jungle monsters. This cloak deals <magicDamage>{{ auradamageperstack }} plus {{ percenthealthforaura }}% max Health magic damage per second</magicDamage> and grants him <speed>3% Move Speed</speed>.<br /><br />Additionally, Mordekaiser's Attacks deal an additional <magicDamage>{{ bonusapauto }} magic damage</magicDamage>.",
+        "image": {
+          "full": "MordekaiserPassive.png",
+          "sprite": "passive2.png",
+          "group": "passive",
+          "x": 432,
+          "y": 48,
+          "w": 48,
+          "h": 48
+        },
+        "datavalues": {
+          "combattrackingduration": [
+            4.0,
+            4.0,
+            4.0
+          ],
+          "maximumstacks": [
+            3.0,
+            3.0,
+            3.0
+          ],
+          "percentapaddedtoautos": [
+            0.4,
+            0.4,
+            0.4
+          ],
+          "furyforqhit": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "furyforautohit": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "furyforehit": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dotradius": [
+            375.0,
+            375.0,
+            375.0
+          ],
+          "movementspeed": [
+            0.03,
+            0.03,
+            0.03
+          ]
+        },
+        "calculations": {
+          "auradamageperstack": {
+            "formula": [
+              {
+                "stat": "abilitypower",
+                "coefficient": 0.3
+              }
+            ]
+          },
+          "percenthealthforaura": {
+            "formula": []
+          },
+          "maxauramonsterdamage": {
+            "formula": []
+          },
+          "bonusapauto": {
+            "formula": [
+              {
+                "stat": "abilitypower",
+                "coefficient": 0.4
+              }
+            ]
+          },
+          "{fff9506a}": {
+            "formula": [
+              {
+                "datavalue": "movementspeed"
+              }
+            ]
+          }
+        }
+      },
+      "recommended": [
+        {
+          "champion": "Mordekaiser",
+          "title": "Beginner",
+          "map": "SR",
+          "mode": "INTRO",
+          "type": "riot",
+          "customTag": "",
+          "extensionPage": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "beginner_starter",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": 4,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "1054",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "beginner_starter",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": 5,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "1054",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "beginner_advanced",
+              "recMath": true,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "1028",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1052",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1058",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "beginner_movementspeed",
+              "recMath": true,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3020",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "beginner_legendaryitem",
+              "recMath": true,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "1011",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1058",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3116",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "beginner_morelegendaryitems",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3089",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3135",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Mordekaiser",
+          "title": "MordekaiserARAM",
+          "map": "HA",
+          "mode": "ARAM",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1056",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "4635",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1026",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4633",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "4637",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3102",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3089",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3135",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "4629",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Mordekaiser",
+          "title": "MordekaiserFIRSTBLOOD",
+          "map": "HA",
+          "mode": "FIRSTBLOOD",
+          "type": "riot",
+          "customTag": "",
+          "extensionPage": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3302",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 3,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3047",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3097",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3044",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "offensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3078",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3053",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3116",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3742",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3143",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3102",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2138",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2043",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Mordekaiser",
+          "title": "MordekaiserARAM",
+          "map": "HA",
+          "mode": "KINGPORO",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "KingPoroSnax",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3680",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3681",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3682",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3683",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3684",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3685",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "2051",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 3,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3116",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3020",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3151",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "offensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3089",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3135",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3165",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3157",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3065",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3742",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "2033",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2139",
+                  "count": 1,
+                  "hideCount": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Mordekaiser",
+          "title": "MordekaiserSL",
+          "map": "NB",
+          "mode": "NEXUSBLITZ",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4201",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "startingjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4101",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3067",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3145",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "earlyjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3108",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3020",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3152",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3116",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essentialjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4104",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3020",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3116",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "offensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3102",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3151",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3135",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3157",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3742",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "situational",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3078",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3089",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3053",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": true
+                },
+                {
+                  "id": "2139",
+                  "count": 1,
+                  "hideCount": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Mordekaiser",
+          "title": "MordekaiserSR",
+          "map": "SR",
+          "mode": "CLASSIC",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1056",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "4635",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1026",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4633",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "4637",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3102",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3089",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3135",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "4629",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

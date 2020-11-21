@@ -1,0 +1,1744 @@
+{
+  "type": "champion",
+  "format": "standAloneComplex",
+  "version": "10.23.1",
+  "data": {
+    "Seraphine": {
+      "id": "Seraphine",
+      "key": "147",
+      "name": "Seraphine",
+      "title": "the Starry-Eyed Songstress",
+      "image": {
+        "full": "Seraphine.png",
+        "sprite": "champion3.png",
+        "group": "champion",
+        "x": 144,
+        "y": 48,
+        "w": 48,
+        "h": 48
+      },
+      "skins": [
+        {
+          "id": "147000",
+          "num": 0,
+          "name": "default",
+          "chromas": false
+        },
+        {
+          "id": "147001",
+          "num": 1,
+          "name": "K/DA ALL OUT Seraphine Indie",
+          "chromas": false
+        }
+      ],
+      "lore": "Born in Piltover to Zaunite parents, Seraphine can hear the souls of others\u2014the world sings to her, and she sings back. Though these sounds overwhelmed her in her youth, she now draws on them for inspiration, turning the chaos into a symphony. She performs for the sister cities to remind their citizens that they're not alone, that they're stronger together, and that, in her eyes, their potential is limitless.",
+      "blurb": "Born in Piltover to Zaunite parents, Seraphine can hear the souls of others\u2014the world sings to her, and she sings back. Though these sounds overwhelmed her in her youth, she now draws on them for inspiration, turning the chaos into a symphony. She...",
+      "allytips": [],
+      "enemytips": [],
+      "tags": [
+        "Mage",
+        "Support"
+      ],
+      "partype": "Mana",
+      "info": {
+        "attack": 0,
+        "defense": 0,
+        "magic": 0,
+        "difficulty": 0
+      },
+      "stats": {
+        "hp": 500.0,
+        "hpperlevel": 80.0,
+        "mp": 440.0,
+        "mpperlevel": 40.0,
+        "movespeed": 325.0,
+        "armor": 19.0,
+        "armorperlevel": 3.0,
+        "spellblock": 30.0,
+        "spellblockperlevel": 0.5,
+        "attackrange": 525.0,
+        "hpregen": 6.5,
+        "hpregenperlevel": 0.6,
+        "mpregen": 8.0,
+        "mpregenperlevel": 1.0,
+        "crit": 0,
+        "critperlevel": 0,
+        "critdamage": 1.75,
+        "attackdamage": 55.0,
+        "attackdamageperlevel": 3.0,
+        "attackspeedperlevel": 1.0,
+        "attackspeed": 0.669,
+        "attackspeedratio": 0.625
+      },
+      "spells": [
+        {
+          "id": "SeraphineQ",
+          "name": "High Note",
+          "description": "Seraphine deals damage in an area.",
+          "tooltip": "Seraphine projects a pure note, dealing <magicDamage>{{ explosiondamage }} magic damage</magicDamage>, increased by the target's missing Health percentage up to <magicDamage>{{ totalempowereddamage }} damage</magicDamage> below {{ executethreshold*100 }}% Health.",
+          "leveltip": {
+            "label": [
+              "Cooldown",
+              "@AbilityResourceName@ Cost",
+              "Initial Damage",
+              "Total AP Ratio"
+            ],
+            "effect": [
+              "{{ cooldown }} -> {{ cooldownNL }}",
+              "{{ cost }} -> {{ costNL }}",
+              "{{ basedamage }} -> {{ basedamageNL }}",
+              "{{ apratio*100.000000 }}% -> {{ aprationl*100.000000 }}%"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            10.0,
+            8.75,
+            7.5,
+            6.25,
+            5.0
+          ],
+          "cooldownBurn": "10/8.75/7.5/6.25/5",
+          "cost": [
+            65.0,
+            70.0,
+            75.0,
+            80.0,
+            85.0
+          ],
+          "costBurn": "65/70/75/80/85",
+          "datavalues": {
+            "basedamage": [
+              55.0,
+              70.0,
+              85.0,
+              100.0,
+              115.0
+            ],
+            "apratio": [
+              0.4,
+              0.45,
+              0.5,
+              0.55,
+              0.6
+            ],
+            "executethreshold": [
+              0.25,
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            "damageamp": [
+              50.0,
+              50.0,
+              50.0,
+              50.0,
+              50.0
+            ]
+          },
+          "calculations": {
+            "explosiondamage": {
+              "formula": [
+                {
+                  "datavalue": "basedamage"
+                },
+                {
+                  "datavalue": "apratio",
+                  "stat": "abilitypower"
+                }
+              ]
+            },
+            "totalempowereddamage": {
+              "modifiedCalculation": "explosiondamage",
+              "multiplier": {
+                "number": 1.5
+              }
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": " {{ abilityresourcename }}",
+          "maxammo": "-1",
+          "range": [
+            900.0,
+            900.0,
+            900.0,
+            900.0,
+            900.0
+          ],
+          "rangeBurn": "900",
+          "image": {
+            "full": "SeraphineQ.png",
+            "sprite": "spell10.png",
+            "group": "spell",
+            "x": 384,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "{{ cost }} {{ abilityresourcename }}"
+        },
+        {
+          "id": "SeraphineW",
+          "name": "Surround Sound",
+          "description": "Seraphine Shields and Hastes nearby allies. If she is already Shielded she will Heal nearby allies as well.",
+          "tooltip": "Seraphine spurs her nearby allied champions in song, granting herself <speed>{{ wmsbonustotal }} decaying Move Speed</speed>, her allies <speed>{{ hastevalueallies }}% Move Speed</speed>, and everyone <shield>{{ totalshieldstrength }} Shield</shield> for {{ shieldduration }} seconds.<br /><br />If Seraphine is already <shield>Shielded</shield>, she calls out to her allies to join her, restoring <healing>{{ wmissinghpheal }}% missing Health</healing> to them per nearby ally champion after a {{ whealsplitdelay }} second delay.",
+          "leveltip": {
+            "label": [
+              "Cooldown",
+              "@AbilityResourceName@ Cost"
+            ],
+            "effect": [
+              "{{ cooldown }} -> {{ cooldownNL }}",
+              "{{ cost }} -> {{ costNL }}"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            26.0,
+            25.0,
+            24.0,
+            23.0,
+            22.0
+          ],
+          "cooldownBurn": "26/25/24/23/22",
+          "cost": [
+            50.0,
+            70.0,
+            90.0,
+            110.0,
+            130.0
+          ],
+          "costBurn": "50/70/90/110/130",
+          "datavalues": {
+            "shieldduration": [
+              2.5,
+              2.5,
+              2.5,
+              2.5,
+              2.5
+            ],
+            "shieldstrength": [
+              60.0,
+              75.0,
+              90.0,
+              105.0,
+              120.0
+            ],
+            "shieldapratio": [
+              0.3,
+              0.3,
+              0.3,
+              0.3,
+              0.3
+            ],
+            "wmsbonus": [
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.2
+            ],
+            "wmsbonusapratio": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "hastevalueforallies": [
+              0.4,
+              0.4,
+              0.4,
+              0.4,
+              0.4
+            ],
+            "wmissinghpbase": [
+              5.0,
+              5.0,
+              5.0,
+              5.0,
+              5.0
+            ],
+            "wmissinghpper100ap": [
+              0.011,
+              0.011,
+              0.011,
+              0.011,
+              0.011
+            ],
+            "whealsplitdelay": [
+              2.5,
+              2.5,
+              2.5,
+              2.5,
+              2.5
+            ]
+          },
+          "calculations": {
+            "totalshieldstrength": {
+              "formula": [
+                {
+                  "level": [
+                    60.0,
+                    61.5,
+                    63.0,
+                    64.5,
+                    66.0,
+                    67.5,
+                    70.0,
+                    72.5,
+                    75.0,
+                    77.5,
+                    80.0,
+                    82.5,
+                    87.0,
+                    91.5,
+                    96.0,
+                    104.0,
+                    112.0,
+                    120.0
+                  ]
+                },
+                {
+                  "datavalue": "shieldapratio",
+                  "stat": "abilitypower"
+                }
+              ]
+            },
+            "wmsbonustotal": {
+              "formula": [
+                {
+                  "datavalue": "wmsbonus"
+                },
+                {
+                  "datavalue": "wmsbonusapratio",
+                  "stat": "abilitypower"
+                }
+              ]
+            },
+            "wmissinghpheal": {
+              "formula": [
+                {
+                  "datavalue": "wmissinghpbase"
+                },
+                {
+                  "datavalue": "wmissinghpper100ap"
+                }
+              ]
+            },
+            "hastevalueallies": {
+              "modifiedCalculation": "wmsbonustotal",
+              "multiplier": {
+                "datavalue": "hastevalueforallies"
+              }
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": " {{ abilityresourcename }}",
+          "maxammo": "-1",
+          "range": [
+            800.0,
+            800.0,
+            800.0,
+            800.0,
+            800.0
+          ],
+          "rangeBurn": "800",
+          "image": {
+            "full": "SeraphineW.png",
+            "sprite": "spell10.png",
+            "group": "spell",
+            "x": 0,
+            "y": 96,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "{{ cost }} {{ abilityresourcename }}"
+        },
+        {
+          "id": "SeraphineE",
+          "name": "Beat Drop",
+          "description": "Seraphine deals damage and impairs the movement of enemies in a line.",
+          "tooltip": "Seraphine unleashes a heavy soundwave, dealing <magicDamage>{{ finaldamage }} Magic Damage</magicDamage> to enemies in a line and <status>Slowing</status> them by {{ slowvalue }}% for {{ slowduration }} second.<br /><br />Enemies that are already <status>Slowed</status> are <status>Rooted</status> instead, and <status>Immobilized</status> enemies are <status>Stunned</status>.",
+          "leveltip": {
+            "label": [
+              "Cooldown",
+              "@AbilityResourceName@ Cost",
+              "Damage"
+            ],
+            "effect": [
+              "{{ cooldown }} -> {{ cooldownNL }}",
+              "{{ cost }} -> {{ costNL }}",
+              "{{ basedamage }} -> {{ basedamageNL }}"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            13.0,
+            12.0,
+            11.0,
+            10.0,
+            9.0
+          ],
+          "cooldownBurn": "13/12/11/10/9",
+          "cost": [
+            60.0,
+            70.0,
+            80.0,
+            90.0,
+            100.0
+          ],
+          "costBurn": "60/70/80/90/100",
+          "datavalues": {
+            "basedamage": [
+              60.0,
+              80.0,
+              100.0,
+              120.0,
+              140.0
+            ],
+            "apratio": [
+              0.35,
+              0.35,
+              0.35,
+              0.35,
+              0.35
+            ],
+            "slowvalue": [
+              99.0,
+              99.0,
+              99.0,
+              99.0,
+              99.0
+            ],
+            "slowduration": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "miniondamagemod": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "calculations": {
+            "finaldamage": {
+              "formula": [
+                {
+                  "datavalue": "basedamage"
+                },
+                {
+                  "datavalue": "apratio",
+                  "stat": "abilitypower"
+                }
+              ]
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": " {{ abilityresourcename }}",
+          "maxammo": "-1",
+          "range": [
+            1300.0,
+            1300.0,
+            1300.0,
+            1300.0,
+            1300.0
+          ],
+          "rangeBurn": "1300",
+          "image": {
+            "full": "SeraphineE.png",
+            "sprite": "spell10.png",
+            "group": "spell",
+            "x": 336,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "{{ cost }} {{ abilityresourcename }}"
+        },
+        {
+          "id": "SeraphineR",
+          "name": "Encore",
+          "description": "Seraphine deals damage and charms enemies hit, refreshing the range with every allied or enemy champion hit.",
+          "tooltip": "Seraphine takes the stage, projecting a captivating force that <status>Charms</status> for {{ rchannelduration }} seconds and deals <magicDamage>{{ r1totaldamage }} magic damage</magicDamage>.<br /><br />Any champions struck (including allies) become part of the performance, extending the range of this ability. Allied champions gain maximum <keywordMajor>Notes</keywordMajor>.",
+          "leveltip": {
+            "label": [
+              "Cooldown",
+              "Charm Duration",
+              "Initial Damage"
+            ],
+            "effect": [
+              "{{ cooldown }} -> {{ cooldownNL }}",
+              "{{ rchannelduration }} -> {{ rchanneldurationNL }}",
+              "{{ r1basedamage }} -> {{ r1basedamageNL }}"
+            ]
+          },
+          "maxrank": 3,
+          "cooldown": [
+            160.0,
+            140.0,
+            120.0
+          ],
+          "cooldownBurn": "160/140/120",
+          "cost": [
+            100.0,
+            100.0,
+            100.0
+          ],
+          "costBurn": "100",
+          "datavalues": {
+            "rchannelduration": [
+              1.25,
+              1.5,
+              1.75
+            ],
+            "r1basedamage": [
+              150.0,
+              200.0,
+              250.0
+            ],
+            "r1apratio": [
+              0.6,
+              0.6,
+              0.6
+            ],
+            "rrange": [
+              1200.0,
+              1200.0,
+              1200.0
+            ],
+            "rminslow": [
+              -0.4,
+              -0.4,
+              -0.4
+            ],
+            "rmaxslow": [
+              -0.99,
+              -0.99,
+              -0.99
+            ]
+          },
+          "calculations": {
+            "r1totaldamage": {
+              "formula": [
+                {
+                  "datavalue": "r1basedamage"
+                },
+                {
+                  "datavalue": "r1apratio",
+                  "stat": "abilitypower"
+                }
+              ]
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": " {{ abilityresourcename }}",
+          "maxammo": "-1",
+          "range": [
+            25000.0,
+            25000.0,
+            25000.0
+          ],
+          "rangeBurn": "25000",
+          "image": {
+            "full": "SeraphineR.png",
+            "sprite": "spell10.png",
+            "group": "spell",
+            "x": 432,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "{{ cost }} {{ abilityresourcename }}"
+        }
+      ],
+      "passive": {
+        "id": "SeraphinePassive",
+        "name": "Stage Presence",
+        "description": "Every third basic spell will cast twice from Seraphine. Additionally, casting spells near allies grants her bonus magic damage and range on her next basic attack.",
+        "tooltip": "Every third basic ability Seraphine casts will echo, automatically casting a second time.<br /><br />Additionally, Seraphine draws inspiration from the music within her allies, creating a <keywordMajor>Note</keywordMajor> for each nearby ally whenever she casts an ability. For each <keywordMajor>Note</keywordMajor>, Seraphine's Attacks gain {{ bonusaarange }} Attack Range and deal an additional <magicDamage>{{ autodamage }} magic damage</magicDamage> and consume the <keywordMajor>Notes</keywordMajor>.",
+        "image": {
+          "full": "Seraphine_Passive.EllipsisMage.png",
+          "sprite": "passive3.png",
+          "group": "passive",
+          "x": 240,
+          "y": 48,
+          "w": 48,
+          "h": 48
+        },
+        "datavalues": {
+          "echocastdelay": [
+            0.01,
+            0.01,
+            0.01
+          ],
+          "autoapratio": [
+            0.075,
+            0.075,
+            0.075
+          ],
+          "maxnotes": [
+            4.0,
+            4.0,
+            4.0
+          ],
+          "repeateddamagevalue": [
+            0.95,
+            0.95,
+            0.95
+          ],
+          "noteduration": [
+            6.0,
+            6.0,
+            6.0
+          ],
+          "bonusaarange": [
+            25.0,
+            25.0,
+            25.0
+          ],
+          "delaybetweennotecasts": [
+            0.075,
+            0.075,
+            0.075
+          ],
+          "noteradius": [
+            100.0,
+            100.0,
+            100.0
+          ],
+          "delaybetweennotecastsdecayrate": [
+            0.95,
+            0.95,
+            0.95
+          ],
+          "miniondamagemultiplier": [
+            3.0,
+            3.0,
+            3.0
+          ]
+        },
+        "calculations": {
+          "autodamage": {
+            "formula": [
+              {
+                "startValue": 5.0,
+                "endValue": 20.0
+              },
+              {
+                "level": [
+                  0.06,
+                  0.06,
+                  0.06,
+                  0.06,
+                  0.06,
+                  0.07,
+                  0.07,
+                  0.07,
+                  0.07,
+                  0.07,
+                  0.08,
+                  0.08,
+                  0.08,
+                  0.08,
+                  0.08,
+                  0.09,
+                  0.09,
+                  0.09
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "recommended": [
+        {
+          "champion": "Seraphine",
+          "title": "SeraphineARAM",
+          "map": "HA",
+          "mode": "ARAM",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3802",
+                  "count": 1,
+                  "hideCount": true
+                },
+                {
+                  "id": "2003",
+                  "count": 2,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3158",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3285",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3157",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "offensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3089",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3165",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3135",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3102",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3504",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3174",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "2033",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2139",
+                  "count": 1,
+                  "hideCount": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Seraphine",
+          "title": "SeraphineNB",
+          "map": "NB",
+          "mode": "NEXUSBLITZ",
+          "type": "riot-mid",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4203",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 2,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3802",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1026",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3020",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3285",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3089",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "standard",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3157",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3135",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3165",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "situational",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3007",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3007",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3102",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": true
+                },
+                {
+                  "id": "2139",
+                  "count": 1,
+                  "hideCount": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Seraphine",
+          "title": "SeraphineSR",
+          "map": "SR",
+          "mode": "CLASSIC",
+          "type": "riot-mid",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1056",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 2,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3802",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1026",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3158",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3089",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "standard",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3157",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3102",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3135",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "situational",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3165",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3116",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerFlash",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": true
+                },
+                {
+                  "id": "2139",
+                  "count": 1,
+                  "hideCount": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Seraphine",
+          "title": "SeraphineSRSupport",
+          "map": "any",
+          "mode": "any",
+          "type": "riot-support",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3850",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 2,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3114",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3070",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3158",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3174",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3504",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "ability_scaling",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3089",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3151",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3107",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3222",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3157",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

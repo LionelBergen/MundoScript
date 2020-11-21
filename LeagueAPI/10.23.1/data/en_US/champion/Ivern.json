@@ -1,0 +1,1994 @@
+{
+  "type": "champion",
+  "format": "standAloneComplex",
+  "version": "10.23.1",
+  "data": {
+    "Ivern": {
+      "id": "Ivern",
+      "key": "427",
+      "name": "Ivern",
+      "title": "the Green Father",
+      "image": {
+        "full": "Ivern.png",
+        "sprite": "champion1.png",
+        "group": "champion",
+        "x": 48,
+        "y": 48,
+        "w": 48,
+        "h": 48
+      },
+      "skins": [
+        {
+          "id": "427000",
+          "num": 0,
+          "name": "default",
+          "chromas": false
+        },
+        {
+          "id": "427001",
+          "num": 1,
+          "name": "Candy King Ivern",
+          "chromas": false
+        },
+        {
+          "id": "427002",
+          "num": 2,
+          "name": "Dunkmaster Ivern",
+          "chromas": true
+        }
+      ],
+      "lore": "Ivern Bramblefoot, known to many as the Green Father, is a peculiar half man, half tree who roams Runeterra's forests, cultivating life everywhere he goes. He knows the secrets of the natural world, and holds deep friendships with all things that grow, fly, and scuttle. Ivern wanders the wilderness, imparting strange wisdom to any he meets, enriching the forests, and occasionally entrusting loose-lipped butterflies with his secrets.",
+      "blurb": "Ivern Bramblefoot, known to many as the Green Father, is a peculiar half man, half tree who roams Runeterra's forests, cultivating life everywhere he goes. He knows the secrets of the natural world, and holds deep friendships with all things that grow...",
+      "allytips": [
+        "Try to help allies follow up a good Rootcaller hit with Triggerseed!</li>",
+        "Use Brushmaker to set up future ambush spots!</li>",
+        "Daisy can block skillshots and slow down enemies. Use her to peel for your teammates!</li>"
+      ],
+      "enemytips": [
+        "Ivern can be deceptively slippery. Be careful chasing him too far.</li>",
+        "Ivern's brush has a long duration. Watch out for ambushes!</li>",
+        "Be careful when fighting Ivern alone if he has Daisy ready to help!</li>"
+      ],
+      "tags": [
+        "Support",
+        "Mage"
+      ],
+      "partype": "Mana",
+      "info": {
+        "attack": 3,
+        "defense": 5,
+        "magic": 7,
+        "difficulty": 7
+      },
+      "stats": {
+        "hp": 585.0,
+        "hpperlevel": 95.0,
+        "mp": 450.0,
+        "mpperlevel": 60.0,
+        "movespeed": 330.0,
+        "armor": 27.0,
+        "armorperlevel": 3.5,
+        "spellblock": 32.1,
+        "spellblockperlevel": 1.25,
+        "attackrange": 475.0,
+        "hpregen": 7.0,
+        "hpregenperlevel": 0.85,
+        "mpregen": 6.0,
+        "mpregenperlevel": 0.75,
+        "crit": 0,
+        "critperlevel": 0,
+        "critdamage": 1.75,
+        "attackdamage": 50.0,
+        "attackdamageperlevel": 3.0,
+        "attackspeedperlevel": 3.4,
+        "attackspeed": 0.644,
+        "attackspeedratio": 0.644
+      },
+      "spells": [
+        {
+          "id": "IvernQ",
+          "name": "Rootcaller",
+          "description": "Ivern conjures a vine, dealing damage and rooting enemy targets hit. Ivern's allies can dash to the rooted target.",
+          "tooltip": "Ivern conjures a vine dealing {{ e5 }} <magicDamage><scaleAP>(+{{ f1 }})</scaleAP> magic damage</magicDamage> and rooting the first enemy hit for {{ e1 }} second(s). Allies can click on rooted enemies to dash into attack range.",
+          "leveltip": {
+            "label": [
+              "Root Duration",
+              "Damage",
+              "Cooldown"
+            ],
+            "effect": [
+              "{{ e1 }} -> {{ e1NL }}",
+              "{{ e5 }} -> {{ e5NL }}",
+              "{{ cooldown }} -> {{ cooldownNL }}"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            14.0,
+            13.0,
+            12.0,
+            11.0,
+            10.0
+          ],
+          "cooldownBurn": "14/13/12/11/10",
+          "cost": [
+            60.0,
+            60.0,
+            60.0,
+            60.0,
+            60.0
+          ],
+          "costBurn": "60",
+          "datavalues": {},
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              1.2,
+              1.4,
+              1.6,
+              1.8,
+              2.0
+            ],
+            [
+              15.0,
+              20.0,
+              25.0,
+              30.0,
+              35.0
+            ],
+            [
+              26.0,
+              23.0,
+              20.0,
+              17.0,
+              14.0
+            ],
+            [
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0
+            ],
+            [
+              80.0,
+              125.0,
+              170.0,
+              215.0,
+              260.0
+            ],
+            [
+              40.0,
+              55.0,
+              70.0,
+              85.0,
+              100.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "1.2/1.4/1.6/1.8/2",
+            "15/20/25/30/35",
+            "26/23/20/17/14",
+            "2",
+            "80/125/170/215/260",
+            "40/55/70/85/100",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [
+            {
+              "link": "physicaldamage",
+              "coeff": 0.7,
+              "key": "f1"
+            }
+          ],
+          "costType": " {{ abilityresourcename }}",
+          "maxammo": "-1",
+          "range": [
+            1075.0,
+            1075.0,
+            1075.0,
+            1075.0,
+            1075.0
+          ],
+          "rangeBurn": "1075",
+          "image": {
+            "full": "IvernQ.png",
+            "sprite": "spell4.png",
+            "group": "spell",
+            "x": 96,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "{{ cost }} {{ abilityresourcename }}"
+        },
+        {
+          "id": "IvernW",
+          "name": "Brushmaker",
+          "description": "In brush, Ivern's attacks deal bonus magic damage. Ivern can activate this ability to create a patch of brush.",
+          "tooltip": "<spellPassive>Passive:</spellPassive> In brush, Ivern's attacks deal <magicDamage>{{ e5 }} <scaleAP>(+{{ f2 }})</scaleAP> bonus magic damage</magicDamage>.<br /><br /><spellPassive>Active:</spellPassive> Ivern grows a patch of brush for {{ e1 }} seconds. For 3 seconds the area in and around the brush is revealed.",
+          "leveltip": {
+            "label": [
+              "Bonus Magic Damage",
+              "Brush Recharge"
+            ],
+            "effect": [
+              "{{ e5 }} -> {{ e5NL }}",
+              "{{ e4 }} -> {{ e4NL }}"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "cooldownBurn": "0.5",
+          "cost": [
+            30.0,
+            30.0,
+            30.0,
+            30.0,
+            30.0
+          ],
+          "costBurn": "30",
+          "datavalues": {},
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              30.0,
+              30.0,
+              30.0,
+              30.0,
+              30.0
+            ],
+            [
+              90.0,
+              90.0,
+              90.0,
+              90.0,
+              90.0
+            ],
+            [
+              190.0,
+              190.0,
+              190.0,
+              190.0,
+              190.0
+            ],
+            [
+              40.0,
+              36.0,
+              32.0,
+              28.0,
+              24.0
+            ],
+            [
+              30.0,
+              37.5,
+              45.0,
+              52.5,
+              60.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "30",
+            "90",
+            "190",
+            "40/36/32/28/24",
+            "30/37.5/45/52.5/60",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": " {{ abilityresourcename }}",
+          "maxammo": "3",
+          "range": [
+            1150.0,
+            1150.0,
+            1150.0,
+            1150.0,
+            1150.0
+          ],
+          "rangeBurn": "1150",
+          "image": {
+            "full": "IvernW.png",
+            "sprite": "spell4.png",
+            "group": "spell",
+            "x": 192,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "{{ cost }} {{ abilityresourcename }}"
+        },
+        {
+          "id": "IvernE",
+          "name": "Triggerseed",
+          "description": "Ivern places a shield on an ally which explodes after a short duration slowing and damaging enemies.",
+          "tooltip": "Ivern shields an ally, absorbing up to {{ e1 }} <scaleAP>(+{{ f3 }})</scaleAP> damage. After 2 seconds, the shield bursts dealing <magicDamage>{{ e2 }} <scaleAP>(+{{ f4 }})</scaleAP> magic damage</magicDamage> and slowing enemies by {{ e3 }}% for {{ e4 }} seconds.<br /><br /><rules><scaleArmor>Can also be cast on Daisy.</scaleArmor></rules>",
+          "leveltip": {
+            "label": [
+              "Shield Amount",
+              "Damage",
+              "Slow",
+              "Cooldown"
+            ],
+            "effect": [
+              "{{ e1 }} -> {{ e1NL }}",
+              "{{ e2 }} -> {{ e2NL }}",
+              "{{ e3 }}% -> {{ e3NL }}",
+              "{{ cooldown }} -> {{ cooldownNL }}"
+            ]
+          },
+          "maxrank": 5,
+          "cooldown": [
+            12.0,
+            11.0,
+            10.0,
+            9.0,
+            8.0
+          ],
+          "cooldownBurn": "12/11/10/9/8",
+          "cost": [
+            70.0,
+            70.0,
+            70.0,
+            70.0,
+            70.0
+          ],
+          "costBurn": "70",
+          "datavalues": {},
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              80.0,
+              115.0,
+              150.0,
+              185.0,
+              220.0
+            ],
+            [
+              70.0,
+              95.0,
+              120.0,
+              145.0,
+              170.0
+            ],
+            [
+              50.0,
+              55.0,
+              60.0,
+              65.0,
+              70.0
+            ],
+            [
+              2.0,
+              2.0,
+              2.0,
+              2.0,
+              2.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              80.0,
+              120.0,
+              160.0,
+              200.0,
+              240.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "80/115/150/185/220",
+            "70/95/120/145/170",
+            "50/55/60/65/70",
+            "2",
+            "1",
+            "80/120/160/200/240",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "vars": [],
+          "costType": " {{ abilityresourcename }}",
+          "maxammo": "-1",
+          "range": [
+            750.0,
+            750.0,
+            750.0,
+            750.0,
+            750.0
+          ],
+          "rangeBurn": "750",
+          "image": {
+            "full": "IvernE.png",
+            "sprite": "spell4.png",
+            "group": "spell",
+            "x": 48,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "{{ cost }} {{ abilityresourcename }}"
+        },
+        {
+          "id": "IvernR",
+          "name": "Daisy!",
+          "description": "Ivern summons his Sentinel friend Daisy to fight with him. Daisy will send out a shockwave if she attacks the same champion three times in a row.",
+          "tooltip": "Ivern summons his sentinel friend Daisy for {{ f6 }} seconds. If Daisy attacks the same champion three times in a row, she will create a shockwave knocking enemies up for 1 second (3s cooldown). Daisy has:<ul><li>Health: {{ totaldaisyhp }}</li><li>Armor and Magic Resist: {{ totalbonusresists }}</li><li>Attack Damage: {{ totaldaisyad }}</li></ul><br /><rules><scaleArmor>Recast to manually issue orders to Daisy.</scaleArmor></rules>",
+          "leveltip": {
+            "label": [
+              "Cooldown",
+              "Daisy's Base Health",
+              "Daisy's Base Armor And Magic Resist",
+              "Daisy Bonus Attack Speed"
+            ],
+            "effect": [
+              "{{ e6 }} -> {{ e6NL }}",
+              "{{ e1 }} -> {{ e1NL }}",
+              "{{ e2 }} -> {{ e2NL }}",
+              "{{ e3 }}% -> {{ e3NL }}"
+            ]
+          },
+          "maxrank": 3,
+          "cooldown": [
+            140.0,
+            130.0,
+            120.0
+          ],
+          "cooldownBurn": "140/130/120",
+          "cost": [
+            100.0,
+            100.0,
+            100.0
+          ],
+          "costBurn": "100",
+          "datavalues": {
+            "spawnbuffduration": [
+              5.0,
+              5.0,
+              5.0
+            ],
+            "msonspawn": [
+              40.0,
+              40.0,
+              40.0
+            ],
+            "dronspawn": [
+              25.0,
+              25.0,
+              25.0
+            ],
+            "daisyhp": [
+              1250.0,
+              2500.0,
+              3750.0
+            ],
+            "daisyresists": [
+              0.0,
+              15.0,
+              40.0
+            ],
+            "daisyas": [
+              30.0,
+              50.0,
+              70.0
+            ],
+            "daisyad": [
+              30.0,
+              60.0,
+              90.0
+            ],
+            "daisyaoedr": [
+              25.0,
+              25.0,
+              25.0
+            ]
+          },
+          "calculations": {
+            "totalbonusresists": {
+              "formula": [
+                {
+                  "datavalue": "daisyresists"
+                },
+                {
+                  "stat": "abilitypower",
+                  "coefficient": 0.05
+                }
+              ]
+            },
+            "totaldaisyhp": {
+              "formula": [
+                {
+                  "datavalue": "daisyhp"
+                },
+                {
+                  "stat": "abilitypower",
+                  "coefficient": 0.5
+                }
+              ]
+            },
+            "totaldaisyad": {
+              "formula": [
+                {
+                  "datavalue": "daisyad"
+                },
+                {
+                  "stat": "abilitypower",
+                  "coefficient": 0.3
+                }
+              ]
+            }
+          },
+          "formulas": {},
+          "effect": [
+            null,
+            [
+              1250.0,
+              2500.0,
+              3750.0
+            ],
+            [
+              15.0,
+              40.0,
+              90.0
+            ],
+            [
+              30.0,
+              50.0,
+              70.0
+            ],
+            [
+              30.0,
+              60.0,
+              130.0
+            ],
+            [
+              25.0,
+              25.0,
+              25.0
+            ],
+            [
+              140.0,
+              130.0,
+              120.0
+            ],
+            [
+              40.0,
+              40.0,
+              40.0
+            ],
+            [
+              25.0,
+              25.0,
+              25.0
+            ],
+            [
+              5.0,
+              5.0,
+              5.0
+            ],
+            [
+              0.05,
+              0.05,
+              0.05
+            ]
+          ],
+          "effectBurn": [
+            null,
+            "1250/2500/3750",
+            "15/40/90",
+            "30/50/70",
+            "30/60/130",
+            "25",
+            "140/130/120",
+            "40",
+            "25",
+            "5",
+            "0.05"
+          ],
+          "vars": [],
+          "costType": " {{ abilityresourcename }}",
+          "maxammo": "-1",
+          "range": [
+            600.0,
+            600.0,
+            600.0
+          ],
+          "rangeBurn": "600",
+          "image": {
+            "full": "IvernR.png",
+            "sprite": "spell4.png",
+            "group": "spell",
+            "x": 144,
+            "y": 48,
+            "w": 48,
+            "h": 48
+          },
+          "resource": "{{ cost }} {{ abilityresourcename }}"
+        }
+      ],
+      "passive": {
+        "id": "IvernP",
+        "name": "Friend of the Forest",
+        "description": "Ivern cannot attack or be attacked by non-epic monsters. Ivern can create magical groves on jungle camps which grow over time. When the grove is fully grown, Ivern may free the monsters to receive gold and experience. After level 5 Ivern can share jungle buffs with allies.",
+        "tooltip": "Ivern will not attack non-epic monsters. Clicking on a jungle monster creates a grove which grows over <span class=\"colorFFFFFF\">{{ harvestduration }}</span> seconds. Each grove costs <span class=\"colorCC3300\">{{ healthtooltip }} health</span> and <span class=\"color44DDFF\">{{ manatooltip }} mana</span>.<br /><br />When a grove is fully grown, clicking on the monsters will set them free, giving gold and experience. <span class=\"colorFFFFFF\">Smiting</span> a grove instantly frees monsters.<br /><br />At <span class=\"colorFFFFFF\">level {{ levelforbuffshare }}</span> and higher, if Ivern frees a buff monster an extra buff is created for Ivern's allies. If an ally kills a buff monster, a buff is left for Ivern.",
+        "image": {
+          "full": "IvernP.png",
+          "sprite": "passive1.png",
+          "group": "passive",
+          "x": 240,
+          "y": 48,
+          "w": 48,
+          "h": 48
+        },
+        "datavalues": {
+          "levelforbuffshare": [
+            5.0,
+            5.0,
+            5.0
+          ],
+          "pickupduration": [
+            60.0,
+            60.0,
+            60.0
+          ]
+        },
+        "calculations": {
+          "harvestduration": {
+            "formula": [
+              {
+                "level": [
+                  40.0,
+                  38.0,
+                  36.0,
+                  34.0,
+                  32.0,
+                  30.0,
+                  27.0,
+                  24.0,
+                  21.0,
+                  18.0,
+                  15.0,
+                  11.0,
+                  7.0,
+                  3.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          },
+          "{60aa666f}": {
+            "formula": []
+          },
+          "{c6433908}": {
+            "formula": []
+          },
+          "healthtooltip": {
+            "modifiedCalculation": "{60aa666f}",
+            "multiplier": {
+              "coefficient": 0.009999999776482582,
+              "stat": 10,
+              "statformula": 1
+            }
+          },
+          "manatooltip": {
+            "modifiedCalculation": "{c6433908}",
+            "multiplier": {
+              "coefficient": 0.009999999776482582,
+              "statformula": 1
+            }
+          }
+        }
+      },
+      "recommended": [
+        {
+          "champion": "Ivern",
+          "title": "Beginner",
+          "map": "SR",
+          "mode": "INTRO",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "beginner_starter",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "items": [
+                {
+                  "id": "1056",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 2,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "beginner_advanced",
+              "recMath": true,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "items": [
+                {
+                  "id": "1004",
+                  "count": 2,
+                  "hideCount": false
+                },
+                {
+                  "id": "3114",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "beginner_movementspeed",
+              "recMath": true,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3158",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "beginner_legendaryitem",
+              "recMath": true,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "ItemTeleportCancel",
+              "appendAfterSection": "",
+              "items": [
+                {
+                  "id": "3114",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3801",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3107",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "beginner_morelegendaryitems",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "items": [
+                {
+                  "id": "3190",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3174",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3504",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3109",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Ivern",
+          "title": "IvernARAM",
+          "map": "HA",
+          "mode": "ARAM",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3303",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3067",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "4642",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "6617",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3009",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3504",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3107",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "6616",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3222",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Ivern",
+          "title": "IvernFIRSTBLOOD",
+          "map": "HA",
+          "mode": "FIRSTBLOOD",
+          "type": "riot",
+          "customTag": "",
+          "extensionPage": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "items": [
+                {
+                  "id": "1056",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 2,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3010",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3024",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "items": [
+                {
+                  "id": "3111",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3027",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3110",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "items": [
+                {
+                  "id": "3065",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3742",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3143",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "situational",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "items": [
+                {
+                  "id": "3800",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3056",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "startingjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "1039",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2031",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "earlyjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3711",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3751",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essentialjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "1409",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3117",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3742",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3065",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3110",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3190",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "situational",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3027",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3800",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3001",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": true
+                },
+                {
+                  "id": "2043",
+                  "count": 1,
+                  "hideCount": true
+                },
+                {
+                  "id": "2138",
+                  "count": 1,
+                  "hideCount": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Ivern",
+          "title": "IvernARAM",
+          "map": "HA",
+          "mode": "KINGPORO",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "KingPoroSnax",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "items": [
+                {
+                  "id": "3680",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3681",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3682",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3683",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3684",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3685",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3010",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3111",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3107",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3029",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "defensive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3174",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3065",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3109",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "situational",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3504",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2065",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3050",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "2033",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2138",
+                  "count": 1,
+                  "hideCount": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Ivern",
+          "title": "IvernSL",
+          "map": "NB",
+          "mode": "NEXUSBLITZ",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4301",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "startingjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4101",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3114",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3158",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "earlyjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3158",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3108",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "SummonerSmite",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3107",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3174",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essentialjungle",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "SummonerSmite",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "4104",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3174",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3107",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "aggressive",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3905",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3102",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "protective",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3190",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3504",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3109",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "consumables",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "2031",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2139",
+                  "count": 1,
+                  "hideCount": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "champion": "Ivern",
+          "title": "IvernSR",
+          "map": "SR",
+          "mode": "CLASSIC",
+          "type": "riot",
+          "customTag": "",
+          "sortrank": 0,
+          "extensionPage": false,
+          "useObviousCheckmark": false,
+          "customPanel": null,
+          "blocks": [
+            {
+              "type": "starting",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "3303",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "2003",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3340",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "early",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "1001",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3067",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "4642",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            },
+            {
+              "type": "essential",
+              "recMath": false,
+              "recSteps": false,
+              "minSummonerLevel": -1,
+              "maxSummonerLevel": -1,
+              "showIfSummonerSpell": "",
+              "hideIfSummonerSpell": "",
+              "appendAfterSection": "",
+              "visibleWithAllOf": [
+                ""
+              ],
+              "hiddenWithAnyOf": [
+                ""
+              ],
+              "items": [
+                {
+                  "id": "6617",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3009",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3504",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3107",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "6616",
+                  "count": 1,
+                  "hideCount": false
+                },
+                {
+                  "id": "3222",
+                  "count": 1,
+                  "hideCount": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
