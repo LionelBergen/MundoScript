@@ -18,7 +18,7 @@ LeagueAPI.getSummonerByName('LeagueOfSausage')
         // do something with accountInfo
 	console.log(accountInfo);
     })
-    .catch(console.log);
+    .catch(console.error);
 ```
 </p>
 </details>
@@ -35,7 +35,7 @@ LeagueAPI.initialize()
     .then(function(data) {
         console.log(data);
     })
-    .catch(console.log);
+    .catch(console.error);
 ```
 </p>
 </details>
@@ -55,7 +55,7 @@ LeagueAPI.initialize()
     .then() {
     	// LeagueAPI returned objects will now have details from DDRagon API.
     })
-    .catch(console.log);
+    .catch(console.error);
 ```
 </p>
 </details>
@@ -101,7 +101,7 @@ LeagueAPI.getThirdPartyCode(accountId)
 	.then(function(data) {
 		console.log(data);
 	})
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -115,7 +115,7 @@ LeagueAPI.getThirdPartyCode(accountId)
 // Returns the status of the LeagueAPI endpoints 
 LeagueAPI.getStatus()
 	.then(console.log)
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -129,7 +129,7 @@ LeagueAPI.getStatus()
 // Returns the current featured games on League
 LeagueAPI.getFeaturedGames()
 	.then(console.log)
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -144,7 +144,7 @@ LeagueAPI.getFeaturedGames()
 // Gets the Match object for the ID passed
 LeagueAPI.getMatch(2970107953)
 	.then(console.log)
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -158,7 +158,7 @@ LeagueAPI.getMatch(2970107953)
 // Gets the Match object for the ID passed with tournamentCode. Note: I don't have an example tournament code
 LeagueAPI.getMatchByTournament(2970107953, tournamentCode)
 	.then(console.log)
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -172,7 +172,7 @@ LeagueAPI.getMatchByTournament(2970107953, tournamentCode)
 // Gets the Match ids for the tournamentCode. Note: I don't have an example tournament code
 LeagueAPI.getMatchIdsByTournament(tournamentCode)
 	.then(console.log)
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -185,7 +185,7 @@ LeagueAPI.getMatchIdsByTournament(tournamentCode)
 ```javascript
 LeagueAPI.getClash(accountObj)
 	.then(console.log)
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -198,7 +198,7 @@ LeagueAPI.getClash(accountObj)
 ```javascript
 LeagueAPI.getClashTournament()
 	.then(console.log)
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -212,7 +212,7 @@ LeagueAPI.getClashTournament()
 LeagueAPI.getSummonerByName('LeagueOfDrMundo').then(function(accountObject) {
 	LeagueAPI.getLeagueRanking(accountObject)
 		.then(console.log)
-		.catch(console.log);
+		.catch(console.error);
 });
 ```
 </p>
@@ -229,7 +229,7 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 	.then(function(accountObject) {
 		console.log(accountObject);
 	})
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -248,7 +248,7 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 	.then(function(activeGames) { 
 		console.log(activeGames);
 	})
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -267,7 +267,7 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 	.then(function(activeGames) { 
 		console.log(activeGames);
 	})
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -281,7 +281,7 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 // Returns a timeline of the match
 LeagueAPI.getMatchTimeline(3026936146)
 	.then(console.log)
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -301,7 +301,7 @@ LeagueAPI.getSummonerByName('LeagueOfSausage')
 	{
 		console.log(championMasteryTotal);
 	})
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -321,7 +321,7 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 	{
 		console.log(championMasteryList);
 	})
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -338,7 +338,7 @@ const leagueOfDrMundoSummonerId = 'IE2WdICfZnhEWYPIBfHio7jxCeo1IFynclJAPquqENRrp
 // Returns the championMastery details for the given account/accountId and champion/championId
 LeagueAPI.getChampionMasteryByChampion(leagueOfDrMundoSummonerId, drMundoChampId)
 	.then(console.log)
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
@@ -353,7 +353,7 @@ LeagueAPI.getChampionMasteryByChampion(leagueOfDrMundoSummonerId, drMundoChampId
 // Returns details for the current champion rotation. Initialize first for details on each champion
 LeagueAPI.getFreeChampionRotation()
 	.then(console.log)
-	.catch(console.log);
+	.catch(console.error);
 ```
 </p>
 </details>
