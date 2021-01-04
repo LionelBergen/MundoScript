@@ -440,7 +440,6 @@ function replaceObjectKeysWithValues(obj)
   replaceObjectFoundByKey(obj, 'champion', 'championObject', champion);
   replaceObjectFoundByKey(obj, 'freeChampionIds', 'freeChampions', champion);
   replaceObjectFoundByKey(obj, 'freeChampionIdsForNewPlayers', 'freeChampionsForNewPlayers', champion);
-	
   replaceObjectFoundByKey(obj, 'profileIconId', 'profileIconObject', profileIcon);
   replaceObjectFoundByKey(obj, 'profileIcon', 'profileIconObject', profileIcon);
 }

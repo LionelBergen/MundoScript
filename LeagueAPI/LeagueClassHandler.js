@@ -38,7 +38,7 @@ module.exports = function getClassesDataFromJSON()
         championObj.getByKey = createFindByFunction('key');
         runesPerksObj.getByKey = function(idValue) { let objs = Object.values(this); return Object.values(objs).find(c => {return c['id'] == idValue;});	};
         fullPerkObj.getByKey = createFindByFunction('id');
-        profileIconObj.getByKey = function(id) { return profileIconObj[id]; };
+        profileIconObj.getByKey = function(id) { return profileIconObj.data[id]; };
 
         const teamObj = {'200': 'red', '100': 'blue'};
         teamObj.getByKey = function getByKey(id) { if (id == '200') return 'red'; else if (id == 100) return 'blue'; };
