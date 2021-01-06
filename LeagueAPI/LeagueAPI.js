@@ -1,6 +1,8 @@
 require('./classes');
 const https = require('./HttpsCaller');
 
+const DDRAGON_VERSION_INCLUDED = '11.1.1';
+
 // Riot specifies this as a sample regexp to validate names
 // any visible Unicode letter characters, digits (0-9), spaces, underscores, and periods.
 //const NAME_REGEXP = new RegExp('^[0-9\\p{L} _\\.]+$');
@@ -60,6 +62,10 @@ class LeagueAPI
     this.apiKey = apiKey;
     this.region = region;
     this.fullyLoadClasses = false;
+  }
+  
+  getDDragonLocalDataVersion() {
+    return DDRAGON_VERSION_INCLUDED;
   }
 	
   /**

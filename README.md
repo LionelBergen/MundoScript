@@ -60,6 +60,20 @@ LeagueAPI.initialize()
 </p>
 </details>
 
+<details><summary>getDDragonLocalDataVersion</summary>
+
+<p>
+
+####
+
+```javascript
+// Gets the version of DDRagon that's included in this project. You can still use other versions, but it will require additional network calls to DDragon.
+// E.G from '11.1.1'
+LeagueAPI.getDDragonLocalDataVersion();
+```
+</p>
+</details>
+
 <details><summary>setFullyLoadClasses(boolean)</summary>
 
 <p>
