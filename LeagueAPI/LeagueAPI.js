@@ -1,7 +1,7 @@
 require('./classes');
 const https = require('./HttpsCaller');
 
-const DDRAGON_VERSION_INCLUDED = '11.1.1';
+const DDRAGON_VERSION_INCLUDED = '11.4.1';
 
 // Riot specifies this as a sample regexp to validate names
 // any visible Unicode letter characters, digits (0-9), spaces, underscores, and periods.
