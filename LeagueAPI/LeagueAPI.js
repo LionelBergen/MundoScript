@@ -53,6 +53,7 @@ let champion;
 let team;
 let profileIcon;
 let runes;
+let items;
 let fullPerks;
 
 class LeagueAPI
@@ -85,6 +86,7 @@ class LeagueAPI
         team = leagueClasses.team;
         profileIcon = leagueClasses.profileIcon;
         runes = leagueClasses.runes;
+        items = leagueClasses.items;
         fullPerks = leagueClasses.fullPerks;
       })
         .then(function() {
@@ -448,6 +450,15 @@ function replaceObjectKeysWithValues(obj)
   replaceObjectFoundByKey(obj, 'freeChampionIdsForNewPlayers', 'freeChampionsForNewPlayers', champion);
   replaceObjectFoundByKey(obj, 'profileIconId', 'profileIconObject', profileIcon);
   replaceObjectFoundByKey(obj, 'profileIcon', 'profileIconObject', profileIcon);
+  
+  // items
+  replaceObjectFoundByKey(obj, 'item0', 'item0', items);
+  replaceObjectFoundByKey(obj, 'item1', 'item1', items);
+  replaceObjectFoundByKey(obj, 'item2', 'item2', items);
+  replaceObjectFoundByKey(obj, 'item3', 'item3', items);
+  replaceObjectFoundByKey(obj, 'item4', 'item4', items);
+  replaceObjectFoundByKey(obj, 'item5', 'item5', items);
+  replaceObjectFoundByKey(obj, 'item6', 'item6', items);
 }
 
 // Runes have many functions to find by keys

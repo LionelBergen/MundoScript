@@ -8,6 +8,7 @@ const summonerJsonURI = '%url%/%apiversion%/data/en_US/summoner.json';
 const championJsonURI = '%url%/%apiversion%/data/en_US/champion.json';
 const runesJsonURI = '%url%/%apiversion%/data/en_US/runesReforged.json';
 const profileIconURI = '%url%/%apiversion%/data/en_US/profileicon.json';
+const itemsJsonURI = '%url%/%apiversion%/data/en_US/item.json';
 
 // There is no official endpoint for the stat modifiers.
 const unofficalPerkURI = 'https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/perks.json';
@@ -24,14 +25,16 @@ module.exports = function getClassesDataFromJSON()
       const runesPerksPromise = getLeagueObject(latestApiVersion, runesJsonURI);
       const fullPerkPromise = getLeagueFullPerksObject(latestApiVersion);
       const profileIconPromise = getLeagueObject(latestApiVersion, profileIconURI);
+      const itemsPromise = getLeagueObject(latestApiVersion, itemsJsonURI);
 
-      Promise.all([mapPromise, summonerPromise, championPromise, runesPerksPromise, fullPerkPromise, profileIconPromise]).then(function(data) {
+      Promise.all([mapPromise, summonerPromise, championPromise, runesPerksPromise, fullPerkPromise, profileIconPromise, itemsPromise]).then(function(data) {
         const mapObj = data[0];
         const summonerObj = data[1];
         const championObj = data[2];
         const runesPerksObj = data[3];
         const fullPerkObj = data[4];
         const profileIconObj = data[5];
+        const itemsObj = data[6];
 
         mapObj.getByKey = createFindByFunction('MapId');
         summonerObj.getByKey = createFindByFunction('key');
@@ -39,12 +42,13 @@ module.exports = function getClassesDataFromJSON()
         runesPerksObj.getByKey = function(idValue) { let objs = Object.values(this); return Object.values(objs).find(c => {return c['id'] == idValue;});	};
         fullPerkObj.getByKey = createFindByFunction('id');
         profileIconObj.getByKey = function(id) { return profileIconObj.data[id]; };
+        itemsObj.getByKey = function(id) { return itemsObj.data[id]; };
 
         const teamObj = {'200': 'red', '100': 'blue'};
         teamObj.getByKey = function getByKey(id) { if (id == '200') return 'red'; else if (id == 100) return 'blue'; };
 
         resolve({'map': mapObj, 'summoner': summonerObj, 'champion': championObj, 'team': teamObj,
-          'profileIcon' : profileIconObj, 'runes': runesPerksObj, 'fullPerks': fullPerkObj});
+          'profileIcon' : profileIconObj, 'runes': runesPerksObj, 'items': itemsObj, 'fullPerks': fullPerkObj});
       });
     })
       .catch(reject);
