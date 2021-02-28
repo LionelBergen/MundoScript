@@ -480,7 +480,7 @@ function replaceObjectFoundByKeyRunes(obj)
       obj[key] = fullPerks.getByKey(obj[key]);
       renamePropertyOnObject(obj, 'perkIds', 'perkObjects');
     }
-    else if (key == 'perkStyle' || key == 'perkSubStyle')
+    else if (key == 'perkStyle' || key == 'perkSubStyle' || key == 'perkPrimaryStyle')
     {
       obj[key] = runes.getByKey(obj[key]);
       // don't rename the key
