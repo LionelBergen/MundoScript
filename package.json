@@ -1,6 +1,6 @@
 {
   "name": "leagueapiwrapper",
-  "version": "2.3.3",
+  "version": "2.4.0",
   "description": "League API Wrapper. Easy to use wrapper for the League Of Legends API",
   "main": "LeagueAPI/LeagueAPI.js",
   "scripts": {
@@ -30,7 +30,7 @@
   "homepage": "https://github.com/LionelBergen/LeagueAPIWrapper#readme",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.10.0",
+    "eslint": "^7.28.0",
     "eslint-config-strongloop": "^2.1.0"
   }
 }
