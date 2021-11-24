@@ -38,6 +38,7 @@ const GET_MATCH_BY_MATCH_ID_AND_TOURNAMNET_CODE_URL = 'https://%region%.api.riot
 */
 
 // MATCH-V5
+const GET_MATCH_URL = 'https://%region%.api.riotgames.com/lol/match/v5/matches/%matchid%?api_key=%apikey%';
 const GET_MATCHLIST_URL = 'https://%region%.api.riotgames.com/lol/match/v5/matches/by-puuid/%puuid%/ids?api_key=%apikey%';
 
 // SPECTATOR-v4
@@ -378,13 +379,12 @@ function getRegionForMatchv5(region){
 
 function getMatchURL(matchId, apiKey, region)
 {
+  region=getRegionForMatchv5(region);
   return getURLWithRegionAndAPI(GET_MATCH_URL, apiKey, region).replace('%matchid%', matchId);
 }
 
 function getURLMatchList(puuid, apiKey, region)
 {
-  //console.log('calling getURLMatchList');
-  //console.log(puuid);
 
   region=getRegionForMatchv5(region);
 
