@@ -371,7 +371,7 @@ function getRegionForMatchv5(region){
   if(region='na1')
   {
     //na1 -- americas
-    console.log('Region detected as na1... changing to americas to support match-v5');
+    //console.log('Region detected as na1... changing to americas to support match-v5');
     region = 'americas';
 
   }
