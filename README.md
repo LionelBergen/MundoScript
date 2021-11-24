@@ -289,14 +289,16 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 </p>
 </details>
 
-<details><summary>getMatchTimeline(matchId)</summary>
+<details><summary>getMatchTimeline(matchId) - Match-V5</summary>
 	
 <p>
 	
 ####
 ```javascript
 // Returns a timeline of the match
-LeagueAPI.getMatchTimeline(3026936146)
+//Now Match-V5 supported
+// matchid has a different format in Match-V5. 
+LeagueAPI.getMatchTimeline('NA1_4102250582')
 	.then(console.log)
 	.catch(console.error);
 ```
