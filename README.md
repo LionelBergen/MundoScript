@@ -267,12 +267,13 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 </p>
 </details>
 
-<details><summary>getMatchList(accountObject)</summary>
+<details><summary>getMatchList(accountObject) - Match-V5</summary>
 	
 <p>
 	
 ####
 ```javascript
+//Now Match-V5 supported
 LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 	.then(function(accountObject) {
 		// Gets match list for the account
