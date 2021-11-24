@@ -38,11 +38,7 @@ const GET_MATCH_BY_MATCH_ID_AND_TOURNAMNET_CODE_URL = 'https://%region%.api.riot
 */
 
 // MATCH-V5
-//formerly GET_MATCHLIST_URL
-
-
 const GET_MATCHLIST_URL = 'https://%region%.api.riotgames.com/lol/match/v5/matches/by-puuid/%puuid%/ids?api_key=%apikey%';
-
 
 // SPECTATOR-v4
 const GET_ACTIVE_GAME_URL = 'https://%region%.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/%name%?api_key=%apikey%';
@@ -148,7 +144,7 @@ class LeagueAPI
 	
   getMatchIdsByTournament(tournamentCode)
   {
-    const url = getURLMatchByTournamentCode(tougetMatchListrnamentCode, this.apiKey, this.region);
+    const url = getURLMatchByTournamentCode(tournamentCode, this.apiKey, this.region);
     return createPromiseContainingLoadedData(url, this.fullyLoadClasses);
   }
 
