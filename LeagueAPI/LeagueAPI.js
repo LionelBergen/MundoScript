@@ -28,11 +28,21 @@ const GET_LEAGUE_BY_SUMMONER_URL = 'https://%region%.api.riotgames.com/lol/leagu
 const GET_STATUS_URL = 'https://%region%.api.riotgames.com/lol/status/v3/shard-data?api_key=%apikey%';
 
 // MATCH-V4
+//discontinued
+/*
 const GET_MATCH_URL = 'https://%region%.api.riotgames.com/lol/match/v4/matches/%matchid%?api_key=%apikey%';
 const GET_MATCHLIST_URL = 'https://%region%.api.riotgames.com/lol/match/v4/matchlists/by-account/%accountid%?api_key=%apikey%';
 const GET_MATCH_TIMELINE_URL = 'https://%region%.api.riotgames.com/lol/match/v4/timelines/by-match/%matchid%?api_key=%apikey%';
 const GET_MATCH_BY_TOURNAMENT_CODE_URL = 'https://%region%.api.riotgames.com/lol/match/v4/matches/by-tournament-code/%tournamentcode%/ids?api_key=%apikey%';
 const GET_MATCH_BY_MATCH_ID_AND_TOURNAMNET_CODE_URL = 'https://%region%.api.riotgames.com/lol/match/v4/matches/%matchid%/by-tournament-code/%tournamentcode%?api_key=%apikey%';
+*/
+
+// MATCH-V5
+//formerly GET_MATCHLIST_URL
+
+
+const GET_MATCHLIST_URL = 'https://%region%.api.riotgames.com/lol/match/v5/matches/by-puuid/%puuid%/ids?api_key=%apikey%';
+
 
 // SPECTATOR-v4
 const GET_ACTIVE_GAME_URL = 'https://%region%.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/%name%?api_key=%apikey%';
@@ -138,7 +148,7 @@ class LeagueAPI
 	
   getMatchIdsByTournament(tournamentCode)
   {
-    const url = getURLMatchByTournamentCode(tournamentCode, this.apiKey, this.region);
+    const url = getURLMatchByTournamentCode(tougetMatchListrnamentCode, this.apiKey, this.region);
     return createPromiseContainingLoadedData(url, this.fullyLoadClasses);
   }
 
@@ -157,10 +167,13 @@ class LeagueAPI
     return createPromiseContainingLoadedData(url, this.fullyLoadClasses, MatchInfo);
   }
 	
+
+
   getMatchList(accountObj)
   {
-    const accountId = getAccountIdFromParam(accountObj);
-    const url = getURLMatchList(accountId, this.apiKey, this.region);
+    const puuid = getpuuidFromParam(accountObj);
+    
+    const url = getURLMatchList(puuid, this.apiKey, this.region);
 		
     return createPromiseContainingLoadedData(url, this.fullyLoadClasses);
   }
@@ -312,6 +325,27 @@ function getAccountIdFromParam(param)
   return accountId;
 }
 
+function getpuuidFromParam(param)
+{
+  puuid = '';
+	
+  if (param instanceof LeagueAccountInfo)
+  {
+    puuid = getStringFromParam(param.puuid);
+  }
+  else
+  {
+    puuid = getStringFromParam(param);
+  }
+	
+  if (!puuid)
+  {
+    throw 'invalid argument, requires puuid or LeagueAccountInfo object';
+  }
+	
+  return puuid;
+}
+
 function getStringFromParam(param)
 {
   let paramType = typeof param;
@@ -332,14 +366,33 @@ function getNumberFromParam(param)
   }
 }
 
+function getRegionForMatchv5(region){
+
+  if(region='na1')
+  {
+    //na1 -- americas
+    console.log('Region detected as na1... changing to americas to support match-v5');
+    region = 'americas';
+
+  }
+
+  return region;
+
+}
+
 function getMatchURL(matchId, apiKey, region)
 {
   return getURLWithRegionAndAPI(GET_MATCH_URL, apiKey, region).replace('%matchid%', matchId);
 }
 
-function getURLMatchList(summonerId, apiKey, region)
+function getURLMatchList(puuid, apiKey, region)
 {
-  return getURLWithRegionAndAPI(GET_MATCHLIST_URL, apiKey, region).replace('%accountid%', summonerId);
+  //console.log('calling getURLMatchList');
+  //console.log(puuid);
+
+  region=getRegionForMatchv5(region);
+
+  return getURLWithRegionAndAPI(GET_MATCHLIST_URL, apiKey, region).replace('%puuid%', puuid);
 }
 
 function getURLMatchTimeline(matchId, apiKey, region)
