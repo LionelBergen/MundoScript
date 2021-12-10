@@ -148,7 +148,7 @@ LeagueAPI.getFeaturedGames()
 </p>
 </details>
 
-<details><summary>getMatch(matchId)</summary>
+<details><summary>getMatch(matchId) - Match-V5</summary>
 	
 <p>
 	
@@ -156,7 +156,9 @@ LeagueAPI.getFeaturedGames()
 ```javascript
 // matchId taken from a getMatchList call
 // Gets the Match object for the ID passed
-LeagueAPI.getMatch(2970107953)
+// Now Match-V5 supported
+// matchid has a different format in Match-V5. 
+LeagueAPI.getMatch('NA1_4102250582')
 	.then(console.log)
 	.catch(console.error);
 ```
@@ -267,12 +269,13 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 </p>
 </details>
 
-<details><summary>getMatchList(accountObject)</summary>
+<details><summary>getMatchList(accountObject) - Match-V5</summary>
 	
 <p>
 	
 ####
 ```javascript
+//Now Match-V5 supported
 LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 	.then(function(accountObject) {
 		// Gets match list for the account
@@ -286,14 +289,16 @@ LeagueAPI.getSummonerByName('LeagueOfDrMundo')
 </p>
 </details>
 
-<details><summary>getMatchTimeline(matchId)</summary>
+<details><summary>getMatchTimeline(matchId) - Match-V5</summary>
 	
 <p>
 	
 ####
 ```javascript
 // Returns a timeline of the match
-LeagueAPI.getMatchTimeline(3026936146)
+//Now Match-V5 supported
+// matchid has a different format in Match-V5. 
+LeagueAPI.getMatchTimeline('NA1_4102250582')
 	.then(console.log)
 	.catch(console.error);
 ```
