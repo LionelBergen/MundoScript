@@ -1,6 +1,6 @@
 {
   "name": "leagueapiwrapper",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "description": "League API Wrapper. Easy to use wrapper for the League Of Legends API",
   "main": "LeagueAPI/LeagueAPI.js",
   "scripts": {
